@@ -20,7 +20,6 @@ class Resource(models.Model):
     content = models.TextField()
     site_screenshot = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
     condition = models.IntegerField(choices=CONDITION, default=0)
     admirers = models.ManyToManyField(
         User, related_name="admirers_like", blank=True
