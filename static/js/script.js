@@ -1,3 +1,10 @@
+/**
+ * Dropdown menu in navigation
+ */
 $(document).ready(function() {
-    $(".dropdown-button").dropdown();
+  $(".button-collapse").sideNav({
+    menuWidth: 200,
+    edge: 'right',  
   });
+});
+
