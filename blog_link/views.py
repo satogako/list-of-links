@@ -11,5 +11,8 @@ class ResourceList(generic.ListView):
     model = Resource
     queryset = Resource.objects.filter(condition=1).order_by('-created_on')
     paginate_by = 8
-    template_name = 'base.html'
+    template_name = 'index.html'
     
+
+def modal_view(request):
+    return render(request, 'modal.html')
