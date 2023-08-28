@@ -24,7 +24,7 @@
                 <img class="responsive-img" src="{% static 'images/LinkOfLinks_logo.jpg' %}" alt="Logo image List Of List">
             </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{% url 'all_resources' %}"><span class="active">All Resources</span></a></li>
+                <li><a href="{% url 'all_resources' %}"><span class="active-navbar">All Resources</span></a></li>
                 <li><a href="#">Components</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
@@ -44,6 +44,27 @@
         {% endblock content %}
     </main>
 
+    <!--nav pagination-->
+    <div class="nav-pagination">
+        {% if page_obj.has_other_pages %}
+            <ul class="pagination center bottom">
+                {% if page_obj.has_previous %}
+                    <li class="waves-effect"><a href="?page={{ page_obj.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+                    
+                {% endif %}
+                {% for i in page_obj.paginator.page_range %}
+                    {% if i == page_obj.number %}
+                        <li class="active blue waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% else %}
+                        <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li class="waves-effect"><a href="?page={{ page_obj.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
     <!--footer-->
     <footer>
         <footer class="page-footer">
@@ -61,11 +82,16 @@
     <!-- Modal-About Window -->
     <div id="modal-about" class="modal">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4>List of Links</h4>
+            <p>
+                Welcome to my website! Here, you will find a curated collection of links, 
+                screenshots, and brief descriptions of resources specifically tailored for 
+                web developers. Whether you're seeking inspiration, tutorials, or tools, 
+                this site has got you covered. Explore the carefully selected resources and 
+                enhance your web development journey.</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-light btn btn-color">Agree</a>
+            <a href="#!" class="modal-close waves-effect waves-light btn btn-color">OK</a>
         </div>
     </div>
     

@@ -10,7 +10,7 @@ class ResourceList(generic.ListView):
     """
     model = Resource
     queryset = Resource.objects.filter(condition=1).order_by('-created_on')
-    paginate_by = 8
+    paginate_by = 9
     template_name = 'index.html'
     
 
