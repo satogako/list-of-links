@@ -15,4 +15,4 @@ class ResourceList(generic.ListView):
     
 
 def modal_view(request):
-    return render(request, 'modal.html')
+    return render(request, 'categories.html')
