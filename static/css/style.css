@@ -42,10 +42,13 @@ nav img:hover {
   transform: scale(1.2)
 }
 
-.nav-wrapper li a:hover {
+.nav-wrapper a:hover {
   color: #27ae61;
   background-color: #222f3e;
-  font-weight: bold;
+}
+
+.nav-wrapper a:hover span {
+  border-bottom: 1px solid #27ae61;
 }
 
 

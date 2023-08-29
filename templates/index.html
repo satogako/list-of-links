@@ -11,16 +11,16 @@
     {% for data in resource_list %}
     <div class="col s12 m4">
         <div class="card hoverable">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{ data.site_screenshot.url }}">
+            <div class="card-image ">
+                <img class="materialboxed" width="650" src="{{ data.site_screenshot.url }}">
                 <span class="sticker z-depth-4">Author: {{ data.author }}</span>
             </div>
-            <div class="card-content">
+            <div class="card-content activator hand-cursor">
                 <span class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i></span>
-                <p class="activator hand-cursor">
+                <p class="activator">
                     {{ data.content|striptags }}
                 </p>
-                <p class="right-align font-weight-size">{{ data.created_on }}  
+                <p class="activator right-align font-weight-size">{{ data.created_on }}  
                     <i class="tiny material-icons">star_border</i><strong>{{ data.number_of_likes }}</strong>
                 </p>
             </div>
