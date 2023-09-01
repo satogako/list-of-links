@@ -6,6 +6,10 @@
 
 {% block content %}
 
-<p>Hello</p>
-
+<div>
+    
+    {% for tag in tags %}
+    <a href="{% url 'tag' tag %}">#{{tag}}</a>
+    {% endfor %}
+</div>
 {% endblock %}

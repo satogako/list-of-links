@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+<p>{{ post.author }} | {{ post.created_on }}</p>
+<p>{{ data.content | safe }}</p>
+
+<p>{{ total_comments }}</p>
+
+{% for comment in comments %}
+
+{{ comment.name }}
+
+{% endfor %}
+
+
+{% endblock content %}

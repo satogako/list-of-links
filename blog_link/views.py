@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Resource
+from taggit.models import Tag
 
 # Create your views here.
 class ResourceList(generic.ListView):
@@ -17,8 +18,10 @@ class ResourceList(generic.ListView):
 def modal_view(request):
     return render(request, 'categories.html')
 
+
+
 class ResourceDetails(View):  
-    # ...
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Resource.objects.filter(condition=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -29,7 +32,7 @@ class ResourceDetails(View):
 
         return render(
             request,
-            "resourсe_details.html",
+            "resource_details.htm",
             {
                 "post": post,
                 "comments": comments,
@@ -37,4 +40,4 @@ class ResourceDetails(View):
 
             },
         )
-   
+
