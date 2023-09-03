@@ -18,7 +18,11 @@
             <div class="card-content activator hand-cursor">
                 <span class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i></span>
                 <p class="activator">
-                    {{ data.content|striptags }}
+                    {% for comment in data.comments.all %} 
+                        {% if comment.approved %} 
+                            <p>Comment: {{ comment.comment_field }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </p>
                 <p class="activator right-align font-weight-size">{{ data.created_on }}  
                     <i class="tiny material-icons">star_border</i><strong>{{ data.number_of_likes }}</strong>
@@ -33,6 +37,15 @@
                 <p>
                     Here is some more information about this product that is only revealed once clicked on.               
                 </p>
+                <!--List of comments-->  
+                    {% for comment in data.comments.all %}
+                        {% if comment.approved %}
+                            <p>name:  {{ comment.name }} |  created_on:  {{ comment.created_on }}</p>
+                            <p>{{ comment.comment_field }}</p>
+                        {% endif %}
+                    {% endfor %}
+                <p>11234567</p>
+
             </div>
         </div>
     </div>

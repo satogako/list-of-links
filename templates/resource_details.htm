@@ -2,17 +2,34 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
-<p>{{ post.author }} | {{ post.created_on }}</p>
-<p>{{ data.content | safe }}</p>
+<div class="row">
+    <div class="col 12">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.author }} | {{ post.created_on }}</p>
+        <p>Content field from model Resource: {{ post.content | safe }}</p>
+        <p>author:  {{ post.author }}</p>
+        <p>apdate_on:  {{ post.apdate_on }}</p>
+        <p>site_screenshot: <img src="{{post.site_screenshot.url}}" width="550" alt=""> </p>
+        <p>condition: {{post.condition}} </p>
+        <p>tags: {{post.tags}} </p>
+        <p>admirers: {{post.number_of_likes}} </p>
 
-<p>{{ total_comments }}</p>
+        {% with comments.count as number_of_comments %}
+       <p>Total comments:  {{ number_of_comments}}</p>
+       {% endwith %}
 
-{% for comment in comments %}
 
-{{ comment.name }}
 
-{% endfor %}
+        <p>{% for comment in comments %}</p>
+        <p>Post:  {{ comment.post }}</p>
+        <p>name:  {{ comment.name }}</p>
+        <p>email:  {{ comment.email }}</p>
+        <p>comment field:  {{ comment.comment_field }}</p>
+        <p>created_on:  {{ comment.created_on }}</p>
+        <p>approved:  {{ comment.approved }}</p>
+    </div>
+</div>
+        {% endfor %}
 
 
 {% endblock content %}
