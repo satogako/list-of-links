@@ -16,36 +16,30 @@
                 <span class="sticker z-depth-4">Author: {{ data.author }}</span>
             </div>
             <div class="card-content activator hand-cursor">
-                <span class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i></span>
-                <p class="activator">
-                    {% for comment in data.comments.all %} 
-                        {% if comment.approved %} 
-                            <p>Comment: {{ comment.comment_field }}</p>
-                        {% endif %}
-                    {% endfor %}
-                </p>
-                <p class="activator right-align font-weight-size">{{ data.created_on }}  
-                    <i class="tiny material-icons">star_border</i><strong>{{ data.number_of_likes }}</strong>
+                <h2 class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i></h2>
+                <p class="activator">{{ data.content|striptags }}</p>
+                <p class="activator right-align font-size-xs">{{ data.created_on }}
+                        <i class="tiny material-icons">star_border</i>
+                        <strong class="font-size-s">{{ data.number_of_likes }}</strong>
                 </p>
             </div>
             <div class="card-action">
                 <a href="{{ data.url }}" target="_blank">This is a link</a>
             </div>
-            <div class="card-reveal">
+            <div class="card-reveal background-color">
                 <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
-                <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">Add You Comment</a> 
-                <p>
-                    Here is some more information about this product that is only revealed once clicked on.               
-                </p>
-                <!--List of comments-->  
-                    {% for comment in data.comments.all %}
-                        {% if comment.approved %}
-                            <p>name:  {{ comment.name }} |  created_on:  {{ comment.created_on }}</p>
-                            <p>{{ comment.comment_field }}</p>
-                        {% endif %}
-                    {% endfor %}
-                <p>11234567</p>
+                <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">Add You Comment</a>
+                <h6 class="center-align">Comments:</h6>
 
+                <!--List of comments-->
+                {% for comment in data.comments.all %}
+                    {% if comment.approved %}
+                        <p class="left-align font-size-xs line-height">
+                            <strong class="font-size-s">{{ comment.name }}</strong> | {{ comment.created_on }}
+                        </p>
+                        <p>{{ comment.comment_field }}</p>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

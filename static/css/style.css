@@ -53,8 +53,9 @@ nav img:hover {
 
 
 /*-----main-----*/
-.card {
-  background-color: #f5f5f5;
+.card,
+.background-color {
+  background-color: #f5f5f5 !important;
 }
 
 .card img {
@@ -74,19 +75,36 @@ nav img:hover {
   color: white;
 }
 
-.font-weight-size {
+.font-size-xs {
   font-weight: 400;
   font-size: x-small;
 }
 
-.font-weight-size strong {
-  font-size: small;
+.font-size-s {
+  font-size: small !important;
+}
+
+.font-size-m {
+  font-weight: 400;
+  font-size: medium !important;
+}
+
+.margin-right {
+  margin-right: 1%;
+}
+
+.line-height{
+  line-height: 85%;
+  margin-top: 30px;  
 }
 
 .nav-pagination {
   margin-top: auto;
 }
 
+.text-align-justify {
+  text-align: justify;
+}
     
 /*-----Footer-----*/
 .page-footer,
