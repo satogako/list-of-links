@@ -58,11 +58,14 @@
                                 {% for comment in comments %}
                                     <br>
                                     <blockquote>
-                                    <p class="left-align font-size-xs line-height">
-                                        <strong class="font-size-s">{{ comment.name }}</strong> | {{ comment.created_on }}
-                                    </p>
-                                    <p class="text-align-justify">{{ comment.comment_field }}</p>
+                                        <p class="left-align font-size-xs line-height">
+                                            <strong class="font-size-s">{{ comment.name }}</strong> | {{ comment.created_on }}
+                                        </p>
+                                        <p class="text-align-justify">{{ comment.comment_field }}</p>
                                     </blockquote>
+                                    {% empty %}
+                                        <br><br>
+                                        <p class="text-placeholder">No comments yet</p>
                                 {% endfor %}
                             </span>
                         </div>

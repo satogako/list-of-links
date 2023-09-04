@@ -105,6 +105,10 @@ nav img:hover {
 .text-align-justify {
   text-align: justify;
 }
+
+.text-placeholder {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
     
 /*-----Footer-----*/
 .page-footer,

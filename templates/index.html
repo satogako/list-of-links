@@ -39,6 +39,9 @@
                         </p>
                         <p>{{ comment.comment_field }}</p>
                     {% endif %}
+                    {% empty %}
+                    <br>
+                    <p class="text-placeholder">No comments yet</p>
                 {% endfor %}
             </div>
         </div>
