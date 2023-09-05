@@ -27,7 +27,7 @@
                 <a href="{{ data.url }}" target="_blank">This is a link</a>
             </div>
             <div class="card-reveal background-color">
-                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{ data.title }}</span>
                 <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">Add You Comment</a>
                 <h6 class="center-align">Comments:</h6>
 
@@ -39,7 +39,7 @@
                         </p>
                         <p>{{ comment.comment_field }}</p>
                     {% endif %}
-                    {% empty %}
+                {% empty %}
                     <br>
                     <p class="text-placeholder">No comments yet</p>
                 {% endfor %}
