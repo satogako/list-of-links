@@ -50,7 +50,9 @@
                 </li>
                 <li>
                     <a href="{% url 'account_login' %}">
+                        {% block active_link_login %}
                         <span>Login</span>
+                        {% endblock %}
                     </a>
                 </li>
                 {% else %}
