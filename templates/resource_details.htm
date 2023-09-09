@@ -37,11 +37,11 @@
                         <!--Comments form-->
                         <div class="col s12 l5 push-l7">
                             {% if already_commented %}
-                            <span>
-                                <h6 class="flow-text">
-                                    Your comment has been sent for approval.
-                                </h6>
-                            </span>
+                            <br>
+                            <div class="chip teal lighten-2">
+                                Your comment has been sent for approval.
+                                <i class="close material-icons">close</i>
+                            </div>
                             {% else %}
 
                                 {% if user.is_authenticated %}
