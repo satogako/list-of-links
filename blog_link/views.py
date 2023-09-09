@@ -46,8 +46,38 @@ class ResourceDetails(View):
             {
                 "post": post,
                 "comments": comments,
+                "already_commented": False,
                 "admired": admired,
                 "form_comment": ResourseFormComment()     
             },
         )
+    
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Resource.objects.filter(condition=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('created_on')
+        admired = False
+        if post.admirers.filter(id=self.request.user.id).exists():
+            admired = True
 
+        form_comment = ResourseFormComment(data=request.POST)
+        if form_comment.is_valid():
+            form_comment.instance.email = request.user.email
+            form_comment.instance.name = request.user.username
+            comment = form_comment.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            form_comment = ResourseFormComment()
+
+        return render(
+            request,
+            "resource_details.htm",
+            {
+                "post": post,
+                "comments": comments,
+                "already_commented": True,
+                "admired": admired,
+                "form_comment": ResourseFormComment()     
+            },
+        )
