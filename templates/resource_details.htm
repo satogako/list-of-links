@@ -34,22 +34,26 @@
                 <div class="divider"></div>
                 <div class="row">
                     <div class="section">
-                        <!--Comments-->
+                        <!--Comments form-->
                         <div class="col s12 l5 push-l7">
+                            {% if user.is_authenticated %}
                             <span>
                                 <h5 class="flow-text">Leave a comment:</h5>
                                 <div class="row">
                                     <form class="col s12">
+                                        {% csrf_token %}
                                         <div class="row">
                                             <div class="input-field col s12 right">
-                                            <i class="material-icons prefix">mode_edit</i>
-                                            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                                            <label for="icon_prefix2">Posting as: {{ post.author }}</label>
+                                                <i class="material-icons prefix">mode_edit</i>
+                                                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                                <label for="icon_prefix2">Posting as: {{ post.author }}</label>
                                             </div>
+                                            <button type="submit" class="waves-effect waves-light btn btn-color right">Submit</button>
                                         </div>
                                     </form>
                                 </div>
                             </span>
+                            {% endif %}
                         </div>
                         <!--List of comments-->
                         <div class="col s12 l7 pull-l5">

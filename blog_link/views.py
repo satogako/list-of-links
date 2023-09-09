@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Resource
+from .forms import ResourseFormComment
 from taggit.models import Tag
 
 # Create your views here.
@@ -45,8 +46,8 @@ class ResourceDetails(View):
             {
                 "post": post,
                 "comments": comments,
-                "admired": admired
-
+                "admired": admired,
+                "form_comment": ResourseFormComment()     
             },
         )
 
