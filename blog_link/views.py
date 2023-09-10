@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Resource
 from .forms import ResourseFormComment
 from taggit.models import Tag
@@ -81,3 +82,15 @@ class ResourceDetails(View):
                 "form_comment": ResourseFormComment()     
             },
         )
+
+
+class ResourseAdmirers(View):
+    def post(self, request, slug):
+        resource = get_object_or_404(Resource, slug=slug)
+
+        if resource.admirers.filter(id=request.user.id).exists():
+            resource.admirers.remove(request.user)
+        else:
+            resource.admirers.add(request.user)
+
+        return HttpResponseRedirect(reverse('resource_comments', args=[slug]))

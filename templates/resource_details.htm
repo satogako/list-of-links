@@ -19,14 +19,31 @@
                         <span>
                             <strong class="font-size-s">{{ post.author }}</strong> | {{ post.created_on }}
                         </span>
-                        <span class="right">
+                    <p>
+                    </p>
+                        <span>
                             <i class="tiny material-icons">comment</i>
                             {% with comments.count as number_of_comments %}
                                 <strong class="font-size-s">{{ number_of_comments}}</strong>
                             {% endwith %}
                         </span>
-                        <span class="right margin-right">
+                        <span>
+                            {% if user.is_authenticated %}
+                            <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if admired %}
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}">
+                                    <i class="tiny star-button material-icons star-color">star</i> 
+                                </button>    
+                                {% else %}
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}">
+                                    <i class="tiny star-button material-icons">star_border</i> 
+                                </button>
+                                {% endif %}
+                            </form>
+                            {% else %}
                             <i class="tiny material-icons">star_border</i>
+                            {% endif %}
                             <strong class="font-size-s">{{ post.number_of_likes }}</strong>
                         </span>
                     </p>

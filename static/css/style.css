@@ -110,7 +110,22 @@ nav img:hover {
   color: rgba(0, 0, 0, 0.4) !important;
 }
 
-    
+.inline-bl {
+  display: inline-block;
+}
+
+.star-button {
+  padding: 0;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+
+.star-color {
+  color: #e84c3d;
+}
+   
+
 /*-----Footer-----*/
 .page-footer,
 .footer-copyright {
