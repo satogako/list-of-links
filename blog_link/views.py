@@ -26,9 +26,9 @@ class ResourceList(generic.ListView):
         return context
 
 
-def modal_view(request):
-    return render(request, 'categories.html')
-
+class TagsList(generic.ListView):
+    model = Resource
+    template_name = 'categories.html'
 
 
 class ResourceDetails(View):  

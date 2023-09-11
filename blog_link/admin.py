@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 @admin.register(Resource)
-class PostAdmin(SummernoteModelAdmin):
+class ResourceAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('condition', 'created_on', 'tags')
     summernote_fields = ('content')
@@ -12,8 +12,8 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     actions = ['publish']
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).prefetch_related('tags')
+    #def get_queryset(self, request):
+    #    return super().get_queryset(request).prefetch_related('tags')
 
     def tag_list(self, obj):
         return u", ".join(o.name for o in obj.tags.all())
