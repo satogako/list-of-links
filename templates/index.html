@@ -30,7 +30,7 @@
                 <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{ data.title }}</span>
                 <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">Add You Comment</a>
                 <h6 class="center-align">Comments:</h6>
-
+                                
                 <!--List of comments-->
                 {% for comment in data.comments.all %}
                     {% if comment.approved %}

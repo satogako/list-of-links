@@ -13,7 +13,7 @@
     <br> 
 
     <div class="row">
-        {% for resource in resources %}
+        {% for resource in resource_list %}
         <div class="col s12 m4">
             <div class="card hoverable">
                 <ul> 
@@ -30,6 +30,8 @@
                             <small>{{ tag }},</small>
                             
                         {% endfor %} 
+
+                        
                      
                 </ul> 
             </div>
@@ -40,6 +42,5 @@
         {% endif %}
         {% endfor %}
     </div>
-
 
 {% endblock %}

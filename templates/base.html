@@ -32,14 +32,14 @@
                     <a href="{% url 'all_resources' %}">
                         {% block active_link_index %}
                         <span>All Resources</span>
-                        {% endblock %}
+                        {% endblock active_link_index %}
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'categories' %}">
                         {% block active_link_categories %}
                         <span>Categories</span>   
-                        {% endblock %}
+                        {% endblock active_link_categories %}
                     </a>
                 </li>
                 {% if not user.is_authenticated %}
@@ -47,14 +47,14 @@
                     <a href="{% url 'account_signup' %}">
                         {% block active_link_signup %}
                         <span>Register</span>
-                        {% endblock %}   
+                        {% endblock active_link_signup %}   
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'account_login' %}">
                         {% block active_link_login %}
                         <span>Login</span>
-                        {% endblock %}
+                        {% endblock active_link_login %}
                     </a>
                 </li>
                 {% else %}
