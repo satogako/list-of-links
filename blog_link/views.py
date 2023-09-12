@@ -26,9 +26,44 @@ class ResourceList(generic.ListView):
         return context
 
 
-class TagsList(generic.ListView):
-    model = Resource
-    template_name = 'categories.html'
+#class TagsList(generic.ListView):
+    #model = Resource
+    #queryset = Resource.objects.filter(condition=1).order_by('-created_on')
+    #paginate_by = 9
+    #template_name = 'categories.html'
+def categories(request):
+    resources = Resource.objects.prefetch_related('tags').all()
+    tags = Tag.objects.all()
+    context = {'resources': resources, 'tags': tags}
+    return render(request, 'categories.html', context)
+    
+
+
+
+    '''
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tag'] = self.tags
+        return context
+    '''
+    '''
+    def get_queryset(self):
+        tags = Tag.objects.all()
+        return tags
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tags'] = self.get_queryset()
+        return context
+    '''
+
+    '''
+    def get(self, request, *arg, **kwargs): 
+        tags = Tag.objects.all() 
+        context = {'tags': tags} 
+        return render(request, 'categories.html', context)
+    '''
+    
 
 
 class ResourceDetails(View):  

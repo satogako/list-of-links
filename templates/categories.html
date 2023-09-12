@@ -5,6 +5,41 @@
 {% endblock %}
 
 {% block content %}
+    <p> 
+        {% for tag in tags %} 
+            <button>{{ tag.name }}</button>
+        {% endfor %} 
+    </p> 
+    <br> 
 
-Hello againe 12312313
+    <div class="row">
+        {% for resource in resources %}
+        <div class="col s12 m4">
+            <div class="card hoverable">
+                <ul> 
+                     
+                        <li> 
+                            <p>{{ resource.title }}</p> 
+                            <p>{{ resource.author }}</p> 
+                            <p>{{ resource.content|striptags }}</p> 
+                        </li>
+
+                        <small>Tags:</small>
+                        {% for tag in resource.tags.all %}
+                             
+                            <small>{{ tag }},</small>
+                            
+                        {% endfor %} 
+                     
+                </ul> 
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+
+
 {% endblock %}
