@@ -4,6 +4,10 @@ from django.http import HttpResponseRedirect
 from .models import Resource
 from .forms import ResourseFormComment
 from taggit.models import Tag
+from rest_framework.generics import ListAPIView
+from .serializers import ResourceSerializer
+
+
 
 # Create your views here.
 class ResourceList(generic.ListView):
@@ -36,6 +40,11 @@ class TagsList(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.all()
         return context
+
+
+class ResourceListAPIView(ListAPIView):
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer
 
 
     '''   
