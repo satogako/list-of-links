@@ -33,7 +33,7 @@ class ResourceList(generic.ListView):
 class TagsList(generic.ListView):
     model = Resource
     queryset = Resource.objects.filter(condition=1).order_by('-created_on')
-    paginate_by = 9
+    #paginate_by = 9
     template_name = 'categories.html'
 
     def get_context_data(self, **kwargs):

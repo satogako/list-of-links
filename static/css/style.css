@@ -124,6 +124,16 @@ nav img:hover {
 .star-color {
   color: #e84c3d;
 }
+
+.row-dis-fl {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.col-fl {
+  flex: 0 0 31.33%;
+  margin: 0 1%;
+}
    
 
 /*-----Footer-----*/
