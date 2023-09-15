@@ -151,3 +151,12 @@ footer i:hover {
   color: #27ae61;
   transform: scale(1.2);
 }
+
+
+ /*-----For screns size from 620px wide and down-----*/
+ @media screen and (max-width: 620px) {
+  .col-fl {
+    flex: 100%;
+    margin: 0;
+  }
+ }
