@@ -7,7 +7,7 @@
     <div class="col s12 l8 offset-l2">
         <div class="card">
             <div class="card-image ">
-                <img src="{% static 'images/LinkOfLinks_logo.jpg' %}" alt="">
+                <img src="{% static 'images/LinkOfLinks_logo.jpg' %}" alt="Logo image List of Links">
             </div>
             <div class="card-content">
                 <!--Header-->
@@ -40,7 +40,7 @@
                                             {% for comment in object_list %}
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="approve[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" checked="checked" />
+                                                    <input type="checkbox" name="approve[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" checked="checked" aria-label="Mark the comment"/>
                                                     <label for="{{comment.id}}"> 
                                                 </td>
                                                 <td>{{ comment.name }}</td>
@@ -52,7 +52,7 @@
                                         </tbody>
                                     </table>
                                     <br>
-                                    <button type="submit" class="waves-effect waves-light btn btn-color">Approve</button>
+                                    <button type="submit" class="waves-effect waves-light btn btn-color" aria-labelledby="Approve-button">Approve</button>
                                     {% else %}
                                     <br>
                                     <p class="text-placeholder">There are no comments for approval</p>
@@ -86,7 +86,7 @@
                                             {% for comment in approved_comments %}
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="delete[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in"/>
+                                                    <input type="checkbox" name="delete[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" aria-label="Mark the comment"/>
                                                     <label for="{{comment.id}}"> 
                                                 </td>
                                                 <td>{{ comment.name }}</td>
@@ -98,7 +98,7 @@
                                         </tbody>
                                     </table>
                                     <br>
-                                    <button type="submit" class="waves-effect waves-light btn red darken-1">Delete</button>
+                                    <button type="submit" class="waves-effect waves-light btn red darken-1" aria-labelledby="delete-button">Delete</button>
                                     {% else %}
                                     <br>
                                     <p class="text-placeholder">There are no approved comments yet</p>

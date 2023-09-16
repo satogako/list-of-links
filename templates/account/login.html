@@ -28,19 +28,19 @@
           
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_login" name="login" type="text" class="validate" maxlength="150" required>
+              <input id="id_login" name="login" type="text" class="validate" maxlength="150" aria-label="Username field" required>
               <label for="id_login">Username</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_pasword" name="password" type="password" class="validate" required>
+              <input id="id_pasword" name="password" type="password" class="validate" aria-label="Password field" required>
               <label for="id_pasword">Password</label>
             </div>
           </div>
           <div class="row">
             <p>
-              <input type="checkbox" id="id_remember" name="remember" />
+              <input type="checkbox" id="id_remember" name="remember" aria-label="remember me"/>
               <label for="id_remember">Remember Me</label>
             </p>    
           </div>
@@ -55,7 +55,7 @@
               </p>
             </div>
           </div>
-          <button class="primaryAction waves-effect waves-light btn btn-color" type="submit">{% trans "Sign In" %}</button>
+          <button class="primaryAction waves-effect waves-light btn btn-color" type="submit" aria-labelledby="submit-button">{% trans "Sign In" %}</button>
         </form>
 
       </div>

@@ -6,7 +6,7 @@
     <div class="col s12 l8 offset-l2">
         <div class="card">
             <div class="card-image ">
-                <img src="{{post.site_screenshot.url}}" alt="">
+                <img src="{{post.site_screenshot.url}}" alt="Screenshot of the {{ post.title }} site">
             </div>
             <div class="card-content">
                 <!--Header-->
@@ -32,11 +32,11 @@
                             <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if admired %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}">
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" aria-labelledby="submit-button-admirers">
                                     <i class="tiny star-button material-icons star-color">star</i> 
                                 </button>    
                                 {% else %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}">
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" aria-labelledby="submit-button-admirers">
                                     <i class="tiny star-button material-icons">star_border</i> 
                                 </button>
                                 {% endif %}
@@ -73,7 +73,7 @@
                                                     <textarea name="comment_field" id="icon_prefix2" class="materialize-textarea"></textarea>
                                                     <label for="icon_prefix2">Posting as: {{ post.author }}</label>
                                                 </div>
-                                                <button type="submit" class="waves-effect waves-light btn btn-color right">Submit</button>
+                                                <button type="submit" class="waves-effect waves-light btn btn-color right" aria-labelledby="submit-button">Submit</button>
                                             </div>
                                         </form>
                                     </div>

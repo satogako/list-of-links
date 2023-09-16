@@ -14,7 +14,7 @@
         {% for tag in tags %} 
             <button 
                 class="waves-effect waves-light btn btn-color"
-                @click="tag = $el.textContent">{{ tag.name }}</button>
+                @click="tag = $el.textContent" aria-labelledby="category-button">{{ tag.name }}</button>
         {% endfor %} 
     </p> 
     <br> 
@@ -42,7 +42,7 @@
                         <small class="right" x-text="resource.tags.join(', ')"></small>
                     </div>
                     <div class="card-action">
-                        <a x-bind:href="resource.url" target="_blank">This is a link</a>
+                        <a x-bind:href="resource.url" rel="nofollow" target="_blank">This is a link</a>
                     </div>
                 </div>                
             </div>

@@ -12,7 +12,7 @@
     <div class="col s12 m4">
         <div class="card hoverable">
             <div class="card-image ">
-                <img class="materialboxed" width="650" src="{{ data.site_screenshot.url }}">
+                <img class="materialboxed" width="650" src="{{ data.site_screenshot.url }}" alt="Screenshot of the {{ data.title }} page">
                 <span class="sticker z-depth-4">Author: {{ data.author }}</span>
             </div>
             <div class="card-content activator hand-cursor">
@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="card-action">
-                <a href="{{ data.url }}" target="_blank">This is a link</a>
+                <a href="{{ data.url }}" rel="nofollow" target="_blank">This is a link</a>
             </div>
             <div class="card-reveal background-color">
                 <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{ data.title }}</span>

@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>List of Links</title>
+    <title>Welcome to 'List of Links'!</title>
+    <meta name="description" content="Welcome to 'List of Links'! Here, you'll find a curated 
+        collection of links, screenshots, and brief descriptions of resources for web developers. 
+        Whether you're seeking inspiration, tutorials, or tools, this site has you covered. Explore 
+        the carefully selected resources and enhance your web development journey.">
+    <meta name="keywords" content="website links, resources for web developers, inspiration, tutorials">
+
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -26,7 +32,7 @@
         <li class="divider"></li>
         <li><a href="{% url 'account_logout' %}">Logout</a></li>
     </ul>
-    <nav>
+    <nav role="navigation">
         <div class="nav-wrapper">
             <a data-target="modal-about" class="modal-trigger hand-cursor">
                 <img class="responsive-img" src="{% static 'images/LinkOfLinks_logo.jpg' %}" alt="Logo image List Of List">
@@ -62,7 +68,7 @@
                     </a>
                 </li>
                 {% else %}
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1" aria-labelledby="drop-down-button">
                     {{ user.username }}<i class="material-icons right">arrow_drop_down</i>
                     </a>
                 </li>
@@ -88,7 +94,7 @@
                 <li><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% endif %}
             </ul>
-            <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons" aria-labelledby="navigation-menu">menu</i></a>
         </div>
     </nav>
     
@@ -127,7 +133,7 @@
             <div class="footer-copyright">
               <div class="container">
               © 2023
-              <a class="grey-text text-lighten-4 right" href="https://github.com/satogako/list-of-links" target="_blank">
+              <a class="grey-text text-lighten-4 right" href="https://github.com/satogako/list-of-links" rel="nofollow" target="_blank">
                 <i class="fa-brands fa-github-alt fa-2xl"></i>
               </a>
               </div>
@@ -138,7 +144,7 @@
     <!-- Modal-About Window -->
     <div id="modal-about" class="modal">
         <div class="modal-content">
-            <h4>List of Links</h4>
+            <h1>List of Links</h1>
             <p>
                 Welcome to my website List of Links! Here, you will find a curated collection of links, 
                 screenshots, and brief descriptions of resources specifically tailored for 
