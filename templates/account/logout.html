@@ -21,7 +21,8 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
             {% endif %}
             <a href="{% url 'all_resources' %}" class="waves-effect waves-light btn btn-color">No</a>
-            <button type="submit" class="waves-effect waves-light btn red darken-1" aria-labelledby="Log-out-button">{% trans 'Sign Out' %}</button>
+            <button type="submit" class="waves-effect waves-light btn red darken-1" 
+              aria-labelledby="Log-out-button">{% trans 'Sign Out' %}</button>
           </form>
 
       </div>

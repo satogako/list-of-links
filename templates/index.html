@@ -12,11 +12,13 @@
     <div class="col s12 m4">
         <div class="card hoverable">
             <div class="card-image ">
-                <img class="materialboxed" width="650" src="{{ data.site_screenshot.url }}" alt="Screenshot of the {{ data.title }} page">
+                <img class="materialboxed" width="650" src="{{ data.site_screenshot.url }}" 
+                    alt="Screenshot of the {{ data.title }} page">
                 <span class="sticker z-depth-4">Author: {{ data.author }}</span>
             </div>
             <div class="card-content activator hand-cursor">
-                <h2 class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i></h2>
+                <h2 class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i>
+                </h2>
                 <p class="activator">{{ data.content|striptags }}</p>
                 <p class="activator right-align font-size-xs">{{ data.created_on }}
                         <i class="tiny material-icons">star_border</i>
@@ -28,7 +30,9 @@
             </div>
             <div class="card-reveal background-color">
                 <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{ data.title }}</span>
-                <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">Add You Comment</a>
+                <a class="waves-effect waves-light btn btn-color" href="{% url 'resource_comments' data.slug %}">
+                    Add You Comment
+                </a>
                 <h6 class="center-align">Comments:</h6>
                                 
                 <!--List of comments-->

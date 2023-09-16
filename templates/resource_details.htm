@@ -32,11 +32,13 @@
                             <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if admired %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" aria-labelledby="submit-button-admirers">
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" 
+                                    aria-labelledby="submit-button-admirers">
                                     <i class="tiny star-button material-icons star-color">star</i> 
                                 </button>    
                                 {% else %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" aria-labelledby="submit-button-admirers">
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" 
+                                    aria-labelledby="submit-button-admirers">
                                     <i class="tiny star-button material-icons">star_border</i> 
                                 </button>
                                 {% endif %}
@@ -70,10 +72,12 @@
                                             <div class="row">
                                                 <div class="input-field col s12 right">
                                                     <i class="material-icons prefix">mode_edit</i>
-                                                    <textarea name="comment_field" id="icon_prefix2" class="materialize-textarea"></textarea>
+                                                    <textarea name="comment_field" id="icon_prefix2" class="materialize-textarea">
+                                                    </textarea>
                                                     <label for="icon_prefix2">Posting as: {{ post.author }}</label>
                                                 </div>
-                                                <button type="submit" class="waves-effect waves-light btn btn-color right" aria-labelledby="submit-button">Submit</button>
+                                                <button type="submit" class="waves-effect waves-light btn btn-color right" 
+                                                    aria-labelledby="submit-button">Submit</button>
                                             </div>
                                         </form>
                                     </div>
@@ -109,6 +113,4 @@
     </div>
 </div>
         
-
-
 {% endblock content %}

@@ -29,20 +29,22 @@
                                     {% if object_list %}
                                     <table>
                                         <thead>
-                                          <tr>
-                                              <th></th>
-                                              <th>Name</th>
-                                              <th>Comment Field</th>
-                                              <th>Resource</th>
-                                              <th>Create On</th>
-                                          </tr>
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Comment Field</th>
+                                                <th>Resource</th>
+                                                <th>Create On</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             {% for comment in object_list %}
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="approve[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" checked="checked" aria-label="Mark the comment"/>
-                                                    <label for="{{comment.id}}"> 
+                                                    <input type="checkbox" name="approve[]" value="{{comment.id}}"
+                                                        id="{{comment.id}}" class="filled-in" checked="checked"
+                                                        aria-label="Mark the comment" />
+                                                    <label for="{{comment.id}}">
                                                 </td>
                                                 <td>{{ comment.name }}</td>
                                                 <td>{{ comment.comment_field }}</td>
@@ -53,15 +55,16 @@
                                         </tbody>
                                     </table>
                                     <br>
-                                    <button type="submit" class="waves-effect waves-light btn btn-color" aria-labelledby="Approve-button">Approve</button>
+                                    <button type="submit" class="waves-effect waves-light btn btn-color"
+                                        aria-labelledby="Approve-button">Approve</button>
                                     {% else %}
                                     <br>
                                     <p class="text-placeholder">There are no comments for approval</p>
-                                    {% endif %}      
+                                    {% endif %}
                                 </form>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="section">
                         <!--Approved comments-->
@@ -75,20 +78,22 @@
                                     {% if approved_comments %}
                                     <table>
                                         <thead>
-                                          <tr>
-                                              <th></th>
-                                              <th>Name</th>
-                                              <th>Comment Field</th>
-                                              <th>Resource</th>
-                                              <th>Create On</th>
-                                          </tr>
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Comment Field</th>
+                                                <th>Resource</th>
+                                                <th>Create On</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             {% for comment in approved_comments %}
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="delete[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" aria-label="Mark the comment"/>
-                                                    <label for="{{comment.id}}"> 
+                                                    <input type="checkbox" name="delete[]" value="{{comment.id}}"
+                                                        id="{{comment.id}}" class="filled-in"
+                                                        aria-label="Mark the comment" />
+                                                    <label for="{{comment.id}}">
                                                 </td>
                                                 <td>{{ comment.name }}</td>
                                                 <td>{{ comment.comment_field }}</td>
@@ -99,21 +104,22 @@
                                         </tbody>
                                     </table>
                                     <br>
-                                    <button type="submit" class="waves-effect waves-light btn red darken-1" aria-labelledby="delete-button">Delete</button>
+                                    <button type="submit" class="waves-effect waves-light btn red darken-1"
+                                        aria-labelledby="delete-button">Delete</button>
                                     {% else %}
                                     <br>
                                     <p class="text-placeholder">There are no approved comments yet</p>
-                                    {% endif %}      
+                                    {% endif %}
                                 </form>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
-
+ 
 {% endblock %}

@@ -11,10 +11,10 @@ from .serializers import ResourceSerializer
 
 # Create your views here.
 class ResourceList(generic.ListView):
-    """
-    Displays only those resources that have published. The results are 
-    sorted in reverse. The resource list is split into 9 items per page.
-    """
+    '''
+    The ResourceList class displays a list of resources and their
+    approved comments in the index.html template.
+    '''
     model = Resource
     queryset = Resource.objects.filter(condition=1).order_by('-created_on')
     paginate_by = 9
@@ -25,15 +25,18 @@ class ResourceList(generic.ListView):
         resources = self.get_queryset()
         comments = []
         for resource in resources:
-            comments.append(resource.comments.filter(approved=True).order_by('created_on'))
-        context['comments'] = comments  
+            comments.append(resource.comments.filter(
+                approved=True).order_by('created_on'))
+        context['comments'] = comments
         return context
 
 
 class TagsList(generic.ListView):
+    '''
+    The TagsList class displays a list of resources and tags.
+    '''
     model = Resource
     queryset = Resource.objects.filter(condition=1).order_by('-created_on')
-    #paginate_by = 9
     template_name = 'categories.html'
 
     def get_context_data(self, **kwargs):
@@ -43,12 +46,20 @@ class TagsList(generic.ListView):
 
 
 class ResourceListAPIView(ListAPIView):
+    '''
+    The ResourceListAPIView class returns a list
+    of all resources in JSON format.
+    '''
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
 
 
-class ResourceDetails(View):  
-    
+class ResourceDetails(View):
+    '''
+    The ResourceDetails class displays the details of a resource and
+    its approved comments in the resource_details.htm template.
+    '''
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Resource.objects.filter(condition=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -65,10 +76,10 @@ class ResourceDetails(View):
                 "comments": comments,
                 "already_commented": False,
                 "admired": admired,
-                "form_comment": ResourseFormComment()     
+                "form_comment": ResourseFormComment()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Resource.objects.filter(condition=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -95,12 +106,16 @@ class ResourceDetails(View):
                 "comments": comments,
                 "already_commented": True,
                 "admired": admired,
-                "form_comment": ResourseFormComment()     
+                "form_comment": ResourseFormComment()
             },
         )
 
 
 class ResourseAdmirers(View):
+    '''
+    This class handles liking and unliking resources
+    '''
+
     def post(self, request, slug):
         resource = get_object_or_404(Resource, slug=slug)
 
@@ -113,25 +128,29 @@ class ResourseAdmirers(View):
 
 
 class ApprovalCommentsView(UserPassesTestMixin, generic.ListView):
-    """
-    Displays comments that require approval. 
-    """
+    '''
+    This class displays comments that require approval and allows the
+    admin to approve or delete them in the  approval_comments.html  template.
+    '''
     model = CommentResourse
     queryset = CommentResourse.objects.filter(approved=False)
     template_name = 'approval_comments.html'
 
     def test_func(self):
-       return self.request.user.username == 'admin'
+        return self.request.user.username == 'admin'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        comments = CommentResourse.objects.filter(approved=True).order_by('-created_on')
+        comments = CommentResourse.objects.filter(
+            approved=True).order_by('-created_on')
         context['approved_comments'] = comments
         return context
-    
+
     def post(self, request, *args, **kwargs):
-        comments_to_approve = CommentResourse.objects.filter(id__in=request.POST.getlist('approve[]'))
+        comments_to_approve = CommentResourse.objects.filter(
+            id__in=request.POST.getlist('approve[]'))
         comments_to_approve.update(approved=True)
-        comments_to_delete = CommentResourse.objects.filter(id__in=request.POST.getlist('delete[]'))
+        comments_to_delete = CommentResourse.objects.filter(
+            id__in=request.POST.getlist('delete[]'))
         comments_to_delete.delete()
         return super().get(request, *args, **kwargs)

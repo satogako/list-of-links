@@ -1,64 +1,65 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
 {% block active_link_login %}
   <span class="active-navbar">Login</span>
-{% endblock %}
+{% endblock %} 
 
-{% load i18n %}
-{% load account socialaccount %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% load i18n %} {% load account socialaccount %} 
+{% block head_title %}{% trans "Sign In" %}
+{% endblock %} 
 
 {% block content %}
 
 <!--Login card-->
 <div class="row">
   <div class="col s12 l8 offset-l2">
-      <div class="card">
-        <div class="card-content">
-
+    <div class="card">
+      <div class="card-content">
         <h5>{% trans "Sign In" %}</h5>
 
-
-        <p>{% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
+        <p>
+          {% blocktrans %}If you have not created an account yet, then please
+          <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+        </p>
 
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          
+
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_login" name="login" type="text" class="validate" maxlength="150" aria-label="Username field" required>
+              <input id="id_login" name="login" type="text" class="validate" maxlength="150" 
+                aria-label="Username field" required/>
               <label for="id_login">Username</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_pasword" name="password" type="password" class="validate" aria-label="Password field" required>
+              <input id="id_pasword" name="password" type="password" class="validate" 
+                  aria-label="Password field" required />
               <label for="id_pasword">Password</label>
             </div>
           </div>
           <div class="row">
             <p>
-              <input type="checkbox" id="id_remember" name="remember" aria-label="remember me"/>
+              <input type="checkbox" id="id_remember" name="remember" aria-label="remember me" />
               <label for="id_remember">Remember Me</label>
-            </p>    
+            </p>
           </div>
           {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
           {% endif %}
           <div class="row">
             <div class="input-field col s12">
-              <p>Please contact
-                <a href="https://github.com/satogako/list-of-links" target="_blanks">me</a> 
+              <p>
+                Please contact
+                <a href="https://github.com/satogako/list-of-links" target="_blanks">me</a>
                 if you have forgotten your password.
               </p>
             </div>
           </div>
-          <button class="primaryAction waves-effect waves-light btn btn-color" type="submit" aria-labelledby="submit-button">{% trans "Sign In" %}</button>
+          <button class="primaryAction waves-effect waves-light btn btn-color" type="submit"
+            aria-labelledby="submit-button">{% trans "Sign In" %}</button>
         </form>
-
       </div>
     </div>
   </div>
