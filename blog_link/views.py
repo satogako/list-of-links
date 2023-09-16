@@ -9,7 +9,6 @@ from rest_framework.generics import ListAPIView
 from .serializers import ResourceSerializer
 
 
-
 # Create your views here.
 class ResourceList(generic.ListView):
     """
@@ -46,19 +45,6 @@ class TagsList(generic.ListView):
 class ResourceListAPIView(ListAPIView):
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
-
-
-    '''   
-    def categories(request):
-        resources = Resource.objects.prefetch_related('tags').all()
-        tags = Tag.objects.all()
-        context = {'resources': resources, 'tags': tags}
-        return render(request, 'categories.html', context)
-    '''
-
-
-
-    
 
 
 class ResourceDetails(View):  
@@ -143,3 +129,9 @@ class ApprovalCommentsView(UserPassesTestMixin, generic.ListView):
         context['approved_comments'] = comments
         return context
     
+    def post(self, request, *args, **kwargs):
+        comments_to_approve = CommentResourse.objects.filter(id__in=request.POST.getlist('approve[]'))
+        comments_to_approve.update(approved=True)
+        comments_to_delete = CommentResourse.objects.filter(id__in=request.POST.getlist('delete[]'))
+        comments_to_delete.delete()
+        return super().get(request, *args, **kwargs)
