@@ -137,5 +137,9 @@ class ApprovalCommentsView(UserPassesTestMixin, generic.ListView):
     def test_func(self):
        return self.request.user.username == 'admin'
 
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        comments = CommentResourse.objects.filter(approved=True).order_by('-created_on')
+        context['approved_comments'] = comments
+        return context
     

@@ -20,7 +20,7 @@
         <p class="text-placeholder center-align">{{ user.username }}</p>
         <li class="divider"></li>
         {% if user.username == "admin" %}
-        <li><a href="{% url 'approval_comments' %}">Approve coments</a></li>
+        <li><a href="{% url 'approval_comments' %}">Approve comments</a></li>
         {% endif %}
         <li class="divider"></li>
         <li><a href="{% url 'account_logout' %}">Logout</a></li>

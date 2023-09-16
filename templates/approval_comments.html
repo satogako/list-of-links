@@ -13,6 +13,22 @@
 {% empty %}
     <p>There are no comments for approval</p>
 {% endfor %}
+
+
+<h3>Approved comments</h3> 
+
+
+{% for comment in approved_comments %}
+
+    <p>{{ comment.name }} | {{ comment.created_on }}</p> 
+    <p>{{ comment.comment_field }}</p>
+    <p>{{ comment.post }}</p>
+
+    
+{% empty %}
+    <p>There are no approved comments yet</p>
+{% endfor %}
+
  
 
 
