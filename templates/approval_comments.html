@@ -3,50 +3,116 @@
 {% block content %}
 {% load static %}
 
-<h3>Comments for approval</h3>
-<form method="POST">
-{% csrf_token %}
-{% for comment in object_list %}
-    <p>
-        <input type="checkbox" name="approve[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" checked="checked" />
-        <label for="{{comment.id}}">
-            <span>
-                <p>{{ comment.name }} | {{ comment.created_on }}</p> 
-                <p>{{ comment.comment_field }}</p>
-                <p>{{ comment.post }}</p>
-            </span>
-        </label>
-    </p>
-{% empty %}
-    <p>There are no comments for approval</p>
-{% endfor %}
-    <button type="submit" name="approve" class="btn">Approve</button>
-    
-</form>
+<div class="row">
+    <div class="col s12 l8 offset-l2">
+        <div class="card">
+            <div class="card-image ">
+                <img src="{% static 'images/LinkOfLinks_logo.jpg' %}" alt="">
+            </div>
+            <div class="card-content">
+                <!--Header-->
+                <div class="card-title">
+                    <h2 class="flow-text center-align"><strong>Approving and deleting comments</strong></h2>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="section">
+                        <!--Сomments are not approved-->
+                        <div class="col s12">
+                            <h5 class="flow-text">Comments for approval:</h5>
+                            <br>
+                            <div class="row">
+                                <form method="POST">
+                                    {% csrf_token %}
 
-<h3>Approved comments</h3> 
-<form method="POST">
-{% csrf_token %}
-{% for comment in approved_comments %}
-<p>
-    <input type="checkbox" name="delete[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in"/>
-    <label for="{{comment.id}}">
-        <span>
-            <p>{{ comment.name }} | {{ comment.created_on }}</p> 
-            <p>{{ comment.comment_field }}</p>
-            <p>{{ comment.post }}</p>
-        </span>
-    </label>
-</p>
-    
-{% empty %}
-    <p>There are no approved comments yet</p>
-{% endfor %}
-<button type="submit" name="delete" class="btn">Delete</button>
-</form>
+                                    {% if object_list %}
+                                    <table>
+                                        <thead>
+                                          <tr>
+                                              <th></th>
+                                              <th>Name</th>
+                                              <th>Comment Field</th>
+                                              <th>Resource</th>
+                                              <th>Create On</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for comment in object_list %}
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="approve[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in" checked="checked" />
+                                                    <label for="{{comment.id}}"> 
+                                                </td>
+                                                <td>{{ comment.name }}</td>
+                                                <td>{{ comment.comment_field }}</td>
+                                                <td>{{ comment.post }}</td>
+                                                <td>{{ comment.created_on|date:'d.m.y H:i' }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <button type="submit" class="waves-effect waves-light btn btn-color">Approve</button>
+                                    {% else %}
+                                    <br>
+                                    <p class="text-placeholder">There are no comments for approval</p>
+                                    {% endif %}      
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="section">
+                        <!--Approved comments-->
+                        <div class="col s12">
+                            <h5 class="flow-text">Approved comments (mark to remove):</h5>
+                            <br>
+                            <div class="row">
+                                <form method="POST">
+                                    {% csrf_token %}
 
-
- 
-
+                                    {% if approved_comments %}
+                                    <table>
+                                        <thead>
+                                          <tr>
+                                              <th></th>
+                                              <th>Name</th>
+                                              <th>Comment Field</th>
+                                              <th>Resource</th>
+                                              <th>Create On</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for comment in approved_comments %}
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="delete[]" value="{{comment.id}}" id="{{comment.id}}" class="filled-in"/>
+                                                    <label for="{{comment.id}}"> 
+                                                </td>
+                                                <td>{{ comment.name }}</td>
+                                                <td>{{ comment.comment_field }}</td>
+                                                <td>{{ comment.post }}</td>
+                                                <td>{{ comment.created_on|date:'d.m.y H:i' }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <button type="submit" class="waves-effect waves-light btn red darken-1">Delete</button>
+                                    {% else %}
+                                    <br>
+                                    <p class="text-placeholder">There are no approved comments yet</p>
+                                    {% endif %}      
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
 {% endblock %}
