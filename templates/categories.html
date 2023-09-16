@@ -6,7 +6,7 @@
 
 {% block content %}
 
-
+<!--Resource card template with buttons tags-->
 <div 
     x-data="{tag: '', resource_list: []}"
     x-init="resource_list = await (await fetch('/resource-list')).json()">
@@ -49,28 +49,5 @@
         </template>
     </div>
 </div>
-    
 
-<!--<ul> 
-                        
-    <li> 
-        <p x-text="resource.title"></p> 
-        <p x-text="resource.author"></p> 
-        <p x-text="resource.content"></p> 
-        <p x-text="resource.created_on"></p>
-        <a x-bind:href="resource.url" target="_blank">LINK</a>
-        
-        <span  class="sticker z-depth-4">
-            <span>Author: </span>
-            <span x-text="resource.author"></span>
-        </span>
-
-    </li>
-
-    <small>Tags:</small>
-     
-        
-        <small x-text="resource.tags.join(', ')"></small>                        
-
-</ul>-->
 {% endblock %}
