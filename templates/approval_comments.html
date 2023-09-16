@@ -3,7 +3,17 @@
 {% block content %}
 {% load static %}
 
-Hello!!!!!!!!!    
+<h3>Comments for approval</h3>
+{% for comment in object_list %}
+   
+                <p>{{ comment.name }} | {{ comment.created_on }}</p> 
+                <p>{{ comment.comment_field }}</p>
+                <p>{{ comment.post }}</p>
+  
+{% empty %}
+    <p>There are no comments for approval</p>
+{% endfor %}
+ 
 
 
 {% endblock %}
