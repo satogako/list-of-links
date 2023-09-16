@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Resource
+from .models import Resource, CommentResourse
 from .forms import ResourseFormComment
 from taggit.models import Tag
 from rest_framework.generics import ListAPIView
@@ -123,3 +124,18 @@ class ResourseAdmirers(View):
             resource.admirers.add(request.user)
 
         return HttpResponseRedirect(reverse('resource_comments', args=[slug]))
+
+
+class ApprovalCommentsView(UserPassesTestMixin, generic.ListView):
+    """
+    Displays comments that require approval. 
+    """
+    model = CommentResourse
+    queryset = CommentResourse.objects.filter(approved=False)
+    template_name = 'approval_comments.html'
+
+    def test_func(self):
+       return self.request.user.username == 'admin'
+
+    
+    

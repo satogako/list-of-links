@@ -17,8 +17,11 @@
     
     <!-- Navigation -->
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
+        <p class="text-placeholder center-align">{{ user.username }}</p>
+        <li class="divider"></li>
+        {% if user.username == "admin" %}
+        <li><a href="{% url 'approval_comments' %}">Approve coments</a></li>
+        {% endif %}
         <li class="divider"></li>
         <li><a href="{% url 'account_logout' %}">Logout</a></li>
     </ul>
@@ -78,6 +81,9 @@
                 <li><a href="{% url 'account_signup' %}">Register</a></li>
                 <li><a href="{% url 'account_login' %}">Login</a></li>
                 {% else %}
+                    {% if user.username == "admin" %}
+                        <li><a href="{% url 'approval_comments' %}">Approve coments</a></li>
+                    {% endif %}
                 <li><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% endif %}
             </ul>
