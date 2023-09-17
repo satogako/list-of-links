@@ -20,7 +20,7 @@
                     <div class="section">
                         <!--Сomments are not approved-->
                         <div class="col s12">
-                            <h5 class="flow-text">Comments for approval:</h5>
+                            <h3 class="flow-text">Comments for approval:</h3>
                             <br>
                             <div class="row">
                                 <form method="POST">
@@ -69,7 +69,7 @@
                     <div class="section">
                         <!--Approved comments-->
                         <div class="col s12">
-                            <h5 class="flow-text">Approved comments (mark to remove):</h5>
+                            <h3 class="flow-text">Approved comments (mark to remove):</h3>
                             <br>
                             <div class="row">
                                 <form method="POST">
@@ -79,11 +79,11 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th></th>
-                                                <th>Name</th>
-                                                <th>Comment Field</th>
-                                                <th>Resource</th>
-                                                <th>Create On</th>
+                                                <th scope="col">Mark</th>
+                                                <th scope="col" id="name">Name</th>
+                                                <th scope="col" id="comment">Comment Field</th>
+                                                <th scope="col" id="resource">Resource</th>
+                                                <th scope="col" id="date_of_create">Create On</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -95,10 +95,10 @@
                                                         aria-label="Mark the comment" >
                                                     <label for="{{comment.id}}">
                                                 </td>
-                                                <td>{{ comment.name }}</td>
-                                                <td>{{ comment.comment_field }}</td>
-                                                <td>{{ comment.post }}</td>
-                                                <td>{{ comment.created_on|date:'d.m.y H:i' }}</td>
+                                                <td headers="name">{{ comment.name }}</td>
+                                                <td headers="comment">{{ comment.comment_field }}</td>
+                                                <td headers="resource">{{ comment.post }}</td>
+                                                <td headers="date_of_create">{{ comment.created_on|date:'d.m.y H:i' }}</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>

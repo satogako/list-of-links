@@ -65,7 +65,7 @@
 
                             {% if user.is_authenticated %}
                             <span>
-                                <h5 class="flow-text">Leave a comment:</h5>
+                                <h3 class="flow-text">Leave a comment:</h3>
                                 <div class="row">
                                     <form method="post" class="col s12">
                                         {% csrf_token %}
@@ -93,7 +93,7 @@
                         <!--List of comments-->
                         <div class="col s12 l7 pull-l5">
                             <span>
-                                <h5 class="flow-text">Comments:</h5>
+                                <h3 class="flow-text">Comments:</h3>
                                 {% for comment in comments %}
                                 <br>
                                 <blockquote>
