@@ -13,48 +13,49 @@
 <!--Card of sign up-->
 <div class="row">
   <div class="col s12 l8 offset-l2">
-      <div class="card">
-        <div class="card-content">
+    <div class="card">
+      <div class="card-content">
 
         <h5>{% trans "Sign Up" %}</h5>
 
-        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Already have an account? Then please 
+          <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_username" name="username" type="text" class="validate" minlength="1" maxlength="150" 
+              <input id="id_username" name="username" type="text" class="validate" minlength="1" maxlength="150"
                 aria-label="Username field" required>
               <label for="id_username">Username</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_email" name="email" type="email" class="validate" maxlength="320" 
-                aria-label="Email field" required>
+              <input id="id_email" name="email" type="email" class="validate" maxlength="320" aria-label="Email field"
+                required>
               <label for="id_email">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_pasword1" name="password1" type="password" class="validate" 
-                aria-label="Pasword field" required>
+              <input id="id_pasword1" name="password1" type="password" class="validate" aria-label="Pasword field"
+                required>
               <label for="id_pasword1">Password</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_pasword2" name="password2" type="password" class="validate" 
-                aria-label="Pasword1 again" required>
+              <input id="id_pasword2" name="password2" type="password" class="validate" aria-label="Pasword1 again"
+                required>
               <label for="id_pasword2">Password (again)</label>
             </div>
           </div>
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button type="submit" class="waves-effect waves-light btn btn-color" 
-            aria-labelledby="submit-button">{% trans "Sign Up" %} &raquo;</button>
+          <button type="submit" class="waves-effect waves-light btn btn-color"
+            aria-label="submit and return on the All Resources page">{% trans "Sign Up" %} &raquo;</button>
         </form>
 
       </div>
