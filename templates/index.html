@@ -20,7 +20,7 @@
                 <h2 class="card-title activator grey-text text-darken-4">{{ data.title }}<i class="material-icons right">more_vert</i>
                 </h2>
                 <p class="activator">{{ data.content|striptags }}</p>
-                <p class="activator right-align font-size-xs">{{ data.created_on }}
+                <p class="activator right-align font-size-s">{{ data.created_on }}
                         <i class="tiny material-icons">star_border</i>
                         <strong class="font-size-s">{{ data.number_of_likes }}</strong>
                 </p>
@@ -38,7 +38,7 @@
                 <!--List of comments-->
                 {% for comment in data.comments.all %}
                     {% if comment.approved %}
-                        <p class="left-align font-size-xs line-height">
+                        <p class="left-align font-size-s line-height">
                             <strong class="font-size-s">{{ comment.name }}</strong> | {{ comment.created_on }}
                         </p>
                         <p>{{ comment.comment_field }}</p>

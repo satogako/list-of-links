@@ -17,14 +17,14 @@
                 <div>
                     <p class="font-size-s">
                         <span>
-                            <strong class="font-size-s">{{ post.author }}</strong> | {{ post.created_on }}
+                            <strong class="font-size-m">{{ post.author }}</strong> | {{ post.created_on }}
                         </span>
                     <p>
                     </p>
                     <span>
                         <i class="tiny material-icons">comment</i>
                         {% with comments.count as number_of_comments %}
-                        <strong class="font-size-s">{{ number_of_comments}}</strong>
+                        <strong class="font-size-m">{{ number_of_comments}}</strong>
                         {% endwith %}
                     </span>
                     <span>
@@ -46,7 +46,7 @@
                         {% else %}
                         <i class="tiny material-icons">star_border</i>
                         {% endif %}
-                        <strong class="font-size-s">{{ post.number_of_likes }}</strong>
+                        <strong class="font-size-m">{{ post.number_of_likes }}</strong>
                     </span>
                     </p>
                 </div>
@@ -97,8 +97,8 @@
                                 {% for comment in comments %}
                                 <br>
                                 <blockquote>
-                                    <p class="left-align font-size-xs line-height">
-                                        <strong class="font-size-s">{{ comment.name }}</strong> |
+                                    <p class="left-align font-size-s line-height">
+                                        <strong>{{ comment.name }}</strong> |
                                         {{ comment.created_on }}
                                     </p>
                                     <p class="text-align-justify">{{ comment.comment_field }}</p>

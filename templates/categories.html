@@ -23,20 +23,14 @@
                         <h2 class="card-title grey-text text-darken-4" x-text="resource.title"></h2>
                         <p>
                             <span>
-                                <small>Author: </small>
+                                <strong>Author: </strong>
                             </span>
                             <span>
-                                <small>
-                                    <strong x-text="resource.author"></strong>
-                                </small>
+                                <strong x-text="resource.author"></strong>
                             </span>
                         </p>
                         <p x-text="resource.content"></p>
-                        <p class="right-align font-size-xs" x-text="resource.created_on">
-                            <i class="tiny material-icons">star_border</i>
-                            <strong class="font-size-s" x-text="resource.number_of_likes"></strong>
-                        </p>
-                        <small class="right" x-text="resource.tags.join(', ')"></small>
+                        <span class="right font-size-s" x-text="resource.tags.join(', ')"></span>
                     </div>
                     <div class="card-action">
                         <a x-bind:href="resource.url" rel="nofollow" target="_blank">This is a link</a>
