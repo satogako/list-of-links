@@ -18,7 +18,7 @@
           <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
             {% endif %}
             <a href="{% url 'all_resources' %}" class="waves-effect waves-light btn btn-color">No</a>
             <button type="submit" class="waves-effect waves-light btn red darken-1" 
