@@ -33,12 +33,12 @@
                             {% csrf_token %}
                             {% if admired %}
                             <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
-                                aria-labelledby="submit-button-admirers">
+                                aria-label="submit like">
                                 <i class="tiny star-button material-icons star-color">star</i>
                             </button>
                             {% else %}
                             <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
-                                aria-labelledby="submit-button-admirers">
+                                aria-label="submit like">
                                 <i class="tiny star-button material-icons">star_border</i>
                             </button>
                             {% endif %}
@@ -77,8 +77,9 @@
                                                     </textarea>
                                                 <label for="icon_prefix2">Posting as: {{ post.author }}</label>
                                             </div>
-                                            <button type="submit" class="waves-effect waves-light btn btn-color right"
-                                                aria-labelledby="submit-button">Submit</button>
+                                            <button type="submit" class="waves-effect waves-light btn btn-color right">
+                                                Submit
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

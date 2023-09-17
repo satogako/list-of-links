@@ -11,7 +11,7 @@
     <p>
         {% for tag in tags %}
         <button class="waves-effect waves-light btn btn-color" @click="tag = $el.textContent"
-            aria-label="category-button">{{ tag.name }}</button>
+            aria-label="category">{{ tag.name }}</button>
         {% endfor %}
     </p>
     <br>
