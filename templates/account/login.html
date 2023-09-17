@@ -1,12 +1,12 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block active_link_login %}
-  <span class="active-navbar">Login</span>
-{% endblock %} 
+<span class="active-navbar">Login</span>
+{% endblock %}
 
-{% load i18n %} {% load account socialaccount %} 
+{% load i18n %} {% load account socialaccount %}
 {% block head_title %}{% trans "Sign In" %}
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
 
@@ -27,15 +27,15 @@
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_login" name="login" type="text" class="validate" maxlength="150" 
-                aria-label="Username field" required/>
+              <input id="id_login" name="login" type="text" class="validate" maxlength="150" aria-label="Username field"
+                required />
               <label for="id_login">Username</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="id_pasword" name="password" type="password" class="validate" 
-                  aria-label="Password field" required />
+              <input id="id_pasword" name="password" type="password" class="validate" aria-label="Password field"
+                required />
               <label for="id_pasword">Password</label>
             </div>
           </div>
@@ -46,7 +46,7 @@
             </p>
           </div>
           {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
           <div class="row">
             <div class="input-field col s12">

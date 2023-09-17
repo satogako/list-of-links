@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -21,33 +21,33 @@
                         </span>
                     <p>
                     </p>
-                        <span>
-                            <i class="tiny material-icons">comment</i>
-                            {% with comments.count as number_of_comments %}
-                                <strong class="font-size-s">{{ number_of_comments}}</strong>
-                            {% endwith %}
-                        </span>
-                        <span>
-                            {% if user.is_authenticated %}
-                            <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if admired %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" 
-                                    aria-labelledby="submit-button-admirers">
-                                    <i class="tiny star-button material-icons star-color">star</i> 
-                                </button>    
-                                {% else %}
-                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}" 
-                                    aria-labelledby="submit-button-admirers">
-                                    <i class="tiny star-button material-icons">star_border</i> 
-                                </button>
-                                {% endif %}
-                            </form>
+                    <span>
+                        <i class="tiny material-icons">comment</i>
+                        {% with comments.count as number_of_comments %}
+                        <strong class="font-size-s">{{ number_of_comments}}</strong>
+                        {% endwith %}
+                    </span>
+                    <span>
+                        {% if user.is_authenticated %}
+                        <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if admired %}
+                            <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
+                                aria-labelledby="submit-button-admirers">
+                                <i class="tiny star-button material-icons star-color">star</i>
+                            </button>
                             {% else %}
-                            <i class="tiny material-icons">star_border</i>
+                            <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
+                                aria-labelledby="submit-button-admirers">
+                                <i class="tiny star-button material-icons">star_border</i>
+                            </button>
                             {% endif %}
-                            <strong class="font-size-s">{{ post.number_of_likes }}</strong>
-                        </span>
+                        </form>
+                        {% else %}
+                        <i class="tiny material-icons">star_border</i>
+                        {% endif %}
+                        <strong class="font-size-s">{{ post.number_of_likes }}</strong>
+                    </span>
                     </p>
                 </div>
                 <div class="divider"></div>
@@ -63,29 +63,30 @@
                             </div>
                             {% else %}
 
-                                {% if user.is_authenticated %}
-                                <span>
-                                    <h5 class="flow-text">Leave a comment:</h5>
-                                    <div class="row">
-                                        <form method="post" class="col s12">
-                                            {% csrf_token %}
-                                            <div class="row">
-                                                <div class="input-field col s12 right">
-                                                    <i class="material-icons prefix">mode_edit</i>
-                                                    <textarea name="comment_field" id="icon_prefix2" class="materialize-textarea">
+                            {% if user.is_authenticated %}
+                            <span>
+                                <h5 class="flow-text">Leave a comment:</h5>
+                                <div class="row">
+                                    <form method="post" class="col s12">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="input-field col s12 right">
+                                                <i class="material-icons prefix">mode_edit</i>
+                                                <textarea name="comment_field" id="icon_prefix2"
+                                                    class="materialize-textarea">
                                                     </textarea>
-                                                    <label for="icon_prefix2">Posting as: {{ post.author }}</label>
-                                                </div>
-                                                <button type="submit" class="waves-effect waves-light btn btn-color right" 
-                                                    aria-labelledby="submit-button">Submit</button>
+                                                <label for="icon_prefix2">Posting as: {{ post.author }}</label>
                                             </div>
-                                        </form>
-                                    </div>
-                                </span>
-                                {% else %}
-                                    <br><br>
-                                    <p class="text-placeholder">Register to be able to add your comments.</p>
-                                {% endif %}
+                                            <button type="submit" class="waves-effect waves-light btn btn-color right"
+                                                aria-labelledby="submit-button">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </span>
+                            {% else %}
+                            <br><br>
+                            <p class="text-placeholder">Register to be able to add your comments.</p>
+                            {% endif %}
                             {% endif %}
                         </div>
                         <!--List of comments-->
@@ -93,16 +94,17 @@
                             <span>
                                 <h5 class="flow-text">Comments:</h5>
                                 {% for comment in comments %}
-                                    <br>
-                                    <blockquote>
-                                        <p class="left-align font-size-xs line-height">
-                                            <strong class="font-size-s">{{ comment.name }}</strong> | {{ comment.created_on }}
-                                        </p>
-                                        <p class="text-align-justify">{{ comment.comment_field }}</p>
-                                    </blockquote>
-                                    {% empty %}
-                                        <br><br>
-                                        <p class="text-placeholder">No comments yet</p>
+                                <br>
+                                <blockquote>
+                                    <p class="left-align font-size-xs line-height">
+                                        <strong class="font-size-s">{{ comment.name }}</strong> |
+                                        {{ comment.created_on }}
+                                    </p>
+                                    <p class="text-align-justify">{{ comment.comment_field }}</p>
+                                </blockquote>
+                                {% empty %}
+                                <br><br>
+                                <p class="text-placeholder">No comments yet</p>
                                 {% endfor %}
                             </span>
                         </div>
@@ -112,5 +114,5 @@
         </div>
     </div>
 </div>
-        
+
 {% endblock content %}

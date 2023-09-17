@@ -7,19 +7,16 @@
 {% block content %}
 
 <!--Resource card template with buttons tags-->
-<div 
-    x-data="{tag: '', resource_list: []}"
-    x-init="resource_list = await (await fetch('/resource-list')).json()">
-    <p> 
-        {% for tag in tags %} 
-            <button 
-                class="waves-effect waves-light btn btn-color"
-                @click="tag = $el.textContent" aria-labelledby="category-button">{{ tag.name }}</button>
-        {% endfor %} 
-    </p> 
-    <br> 
-    <div class="row-dis-fl">               
-        <template x-for="resource in resource_list.filter(f => f.tags.includes(tag))">        
+<div x-data="{tag: '', resource_list: []}" x-init="resource_list = await (await fetch('/resource-list')).json()">
+    <p>
+        {% for tag in tags %}
+        <button class="waves-effect waves-light btn btn-color" @click="tag = $el.textContent"
+            aria-label="category-button">{{ tag.name }}</button>
+        {% endfor %}
+    </p>
+    <br>
+    <div class="row-dis-fl">
+        <template x-for="resource in resource_list.filter(f => f.tags.includes(tag))">
             <div class="col-fl">
                 <div class="card hoverable">
                     <div class="card-content">
@@ -44,7 +41,7 @@
                     <div class="card-action">
                         <a x-bind:href="resource.url" rel="nofollow" target="_blank">This is a link</a>
                     </div>
-                </div>                
+                </div>
             </div>
         </template>
     </div>
