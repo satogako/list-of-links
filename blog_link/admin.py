@@ -25,7 +25,7 @@ class ResourceAdmin(SummernoteModelAdmin):
 @admin.register(CommentResourse)
 class CommentResourseAdmin(admin.ModelAdmin):
     '''
-    This admin class displays the comment model with filter and search options, 
+    This admin class displays the comment model with filter and search options,
     and an action to approve comments.
     '''
     list_display = ('name', 'comment_field', 'post', 'created_on', 'approved')

@@ -6,6 +6,7 @@ from taggit.managers import TaggableManager
 
 CONDITION = ((0, "Draft"), (1, "Published"))
 
+
 class Resource(models.Model):
     """
     Model class for resources added to the blog_link
@@ -34,13 +35,14 @@ class Resource(models.Model):
 
     def number_of_likes(self):
         return self.admirers.count()
-    
+
 
 class CommentResourse(models.Model):
     """
     Model class for comments added to the blog_link
     """
-    post = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(
+        Resource, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     comment_field = models.TextField()
@@ -52,6 +54,3 @@ class CommentResourse(models.Model):
 
     def __str__(self):
         return f"Comment {self.comment_field} by {self.name}"
-
-
-

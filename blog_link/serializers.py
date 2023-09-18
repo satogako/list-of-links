@@ -6,7 +6,8 @@ from .models import Resource
 
 class ResourceSerializer(TaggitSerializer, serializers.ModelSerializer):
     '''
-    The ResourceSerializer class serializes the Resource model and returns JSON data.
+    The ResourceSerializer class serializes the Resource model and
+    returns JSON data.
     '''
     tags = TagListSerializerField()
     author = serializers.SerializerMethodField()
