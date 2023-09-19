@@ -1,40 +1,45 @@
-test
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
+# [![List of Links](docs/screenshots/logo.jpg)](https://list-of-links-sdj-aa4cc1def405.herokuapp.com/)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[![List of Links shown on a iPhone, MacBook and iPad](docs\screenshots\responsive_L_of_L.jpg)](https://list-of-links-sdj-aa4cc1def405.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **July 26th, 2023**
 
-## Codeanywhere Reminders
+## Introduction
+List of Links is a curated collection of useful resources for web developers. The site contains links, screenshots and descriptions of websites, tools, tutorials, and more. Whether you're looking for inspiration, learning a new skill, or searching for a solution to a coding problem, List of Links has you covered. 
+ 
+Users can browse the collection of resources by category or search for specific topics. The site aims to provide value to web developers of all skill levels. Each resource has been hand-picked and organized to save developers time searching the web. List of Links makes discovering high-quality web development resources simple and efficient.   
+ 
+ Users can view resources, like posts and comment on resources. List of Links is a community platform where web developers can share knowledge and help each other improve their skills.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+ The project was built keeping the Agile management principles in mind, and I utilised many of GitHub's features such as Issue and Projects to implement Scrum methodology.
 
-`python3 -m http.server`
+[Kanban Board for project](https://github.com/users/satogako/projects/5)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+[Closed Issues on GitHub for the project](https://github.com/satogako/list-of-links/issues?q=is%3Aissue+is%3Aclosed)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+I used [GitHub issues](https://github.com/satogako/list-of-links/issues) for the product backlog containing the user stories.
 
-`http_server`
+CRUD functionality:
+- All Categories - displays a list of resources and their approved comments
+- Categories - shows resource details and its verified comments
+- Approve comments - displays comments that need approval and allows the administrator to approve or delete them.
+- resource_details.htm - shows details of the resource and its confirmed comments and also allows the registered user to send comments.
+- class ResourseAdmirers - handles liking and disliking resources.
+- class ApprovalCommentsView - displays comments that need approval and allows the administrator to approve or delete them.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<details>
+<summary>Screenshot of the product backlog</summary>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+![](docs\screenshots\user_story.jpg)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+</details>
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+I used the tags feature in GitHub Issues for assigning story points, prioritising features based on [the MoSCoW method](https://en.wikipedia.org/wiki/MoSCoW_method), and categorising the user stories.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+I used the [Milestones feature](https://github.com/satogako/list-of-links/milestones) to plan sprints and set deadlines.
 
----
+User Stories can been seen below under [User Story Testing](#user-story-testing), and in the [GitHub Issues](https://github.com/satogako/list-of-links/issues?q=is%3Aissue+is%3Aclosed) for full details including screenshots, story points and associated sprints.
 
-Happy coding!
+
+
