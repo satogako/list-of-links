@@ -1,7 +1,7 @@
 
 # [![List of Links](docs/screenshots/logo.jpg)](https://list-of-links-sdj-aa4cc1def405.herokuapp.com/)
 
-[![List of Links shown on a iPhone, MacBook and iPad](docs\screenshots\responsive_L_of_L.jpg)](https://list-of-links-sdj-aa4cc1def405.herokuapp.com/)
+[![List of Links shown on a iPhone, MacBook and iPad](docs/screenshots/responsive_L_of_L.jpg)](https://list-of-links-sdj-aa4cc1def405.herokuapp.com/)
 
 
 ## Introduction
@@ -30,7 +30,7 @@ CRUD functionality:
 <details>
 <summary>Screenshot of the product backlog</summary>
 
-![](docs\screenshots\user_story.jpg)
+![](docs/screenshots/user_story.jpg)
 
 </details>
 
@@ -44,7 +44,7 @@ I used the [Milestones feature](https://github.com/satogako/list-of-links/milest
 User Stories can been seen below under [User Story Testing](#user-story-testing), and in the [GitHub Issues](https://github.com/satogako/list-of-links/issues?q=is%3Aissue+is%3Aclosed) for full details including screenshots, story points and associated sprints.
 
 
-# UX Design 
+## UX Design 
 The UX design for this project aims to provide an intuitive and engaging experience for users. The layout and flow of the site focuses on simplicity while still maintaining an aesthetic appeal.
 
 ### Layout 
@@ -54,32 +54,60 @@ The content on each page is centered for easy reading and divided into cards for
 
 ### Wireframes
 
-![](docs\screenshots\layot.jpg)
+![](docs/screenshots/layot.jpg)
 
 
 ### Colors
-<div style="width: 30px; height: 30px; background-color: #2196F3;"></div>
+![](docs/screenshots/colors1.jpg)
 The color palette utilizes shades of blue, teal and grey to give the site a clean and minimal feel. The primary color used is a medium blue which is applied to interactive elements such as links and buttons. 
 
-<div style="width: 30px; height: 30px; background-color: #26a69a;"></div>
 Teal shades are incorporated as accent colors to highlight important elements or convey meaning. For example, a teal sticker is used to prominently display the author of each resource on the main page. Teal is also used for the “sent for approval” chips on the comments page. 
  
 Various shades of grey are used throughout the site for text, dividers and backgrounds.
 
-<div style="width: 30px; height: 30px; background-color: #616161;"></div>
-<div style="width: 30px; height: 30px; background-color: #424242;"></div> 
 Darker greys are applied to text.
 
-<div style="width: 30px; height: 30px; background-color: #f5f5f5;"></div>
-<div style="width: 30px; height: 30px; background-color: #eeeeee;"></div> 
-While lighter greys are used for backgrounds and dividers. The specific shades of grey were chosen to provide sufficient contrast between elements while maintaining an understated and minimal style.
+<details>
+<summary>While lighter greys are used for backgrounds and dividers. The specific shades of grey were chosen to provide sufficient contrast between elements while maintaining an understated and minimal style.</summary>
 
-<div style="width: 30px; height: 30px; background-color: #e53935;"></div>
-The vibrant shade of red color, is used sparingly to draw attention. This includes comments, delete button and logout. Its striking contrast against the primarily cool color palette ensures users notice and respond to these important elements.
+![](docs/screenshots/colors_white_grey.jpg)
 
-<div style="width: 30px; height: 30px; background-color: #2c3e50;"></div>
-<div style="width: 30px; height: 30px; background-color: #26a69a;"></div>
-The navigation bar utilizes shades of blue and teal to visually separate it from the rest of the page. The teal shade is used for the active link to clearly show the user their current location.  
-The footer uses the same blue shade as the navigation bar for the background. The GitHub icon in the footer use teal on hover to match the accent color used throughout the site. This helps create a cohesive style across sections.
+</details>
+
+<details>
+<summary>The vibrant shade of red color, is used sparingly to draw attention. This includes comments, delete button and logout. Its striking contrast against the primarily cool color palette ensures users notice and respond to these important elements.</summary>
+
+![](docs/screenshots/color2.jpg)
+
+</details>
+
+<details>
+<summary>The navigation bar utilizes shades of blue and teal to visually separate it from the rest of the page. The teal shade is used for the active link to clearly show the user their current location.  
+The footer uses the same blue shade as the navigation bar for the background. The GitHub icon in the footer use teal on hover to match the accent color used throughout the site. This helps create a cohesive style across sections.</summary>
+
+![](docs/screenshots/color3.jpg)
+
+</details>
  
 The selected color scheme aims to give the site a simple yet polished feel that focuses users’ attention on content over visual flair. The primarily neutral palette is accentuated with vibrant shades of blue and teal to highlight interactive elements and convey meaning in an intuitive fashion. Overall, the color choices reflect the clean and minimal aesthetic maintained throughout the design and layout of the site.
+
+
+### Typography
+The typography used in 'List of Links' is Roboto font. It is a minimal, geometric sans-serif typeface created by Christian Robertson and released by Google as an open-source font in 2011. 
+ 
+Roboto has a dual nature. It has a mechanical skeleton and the forms are largely geometric. At the same time, the font features friendly and open curves. While some grotesks distort their letterforms to force a rigid rhythm, Roboto doesn’t compromise, allowing letters to be settled into their natural width. This makes for a more natural reading rhythm more commonly found in humanist and serif types. 
+ 
+This typeface is well suited for any UI design as it's clean, minimal and has multiple weights and styles to choose from based on the context. The font renders well on screens and provides a pleasant reading experience for the users.
+
+
+### Accessibility
+The website has been designed keeping accessibility principles in mind to provide an inclusive experience for users with disabilities. The layout utilizes semantic HTML5 elements and ARIA attributes for screen readers. The color scheme also meets WCAG color contrast requirements.  
+ 
+All interactive elements like buttons, links and form fields have clearly defined focus states. The site is navigable can use a keyboard.  
+ 
+The content is written in a clear, concise manner using plain language to aid comprehension. All images have alt attributes and the site does not rely solely on visuals to convey information. 
+
+
+## Existing Features
+
+### Landing Page
