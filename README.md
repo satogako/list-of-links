@@ -101,13 +101,74 @@ This typeface is well suited for any UI design as it's clean, minimal and has mu
 
 
 ### Accessibility
-The website has been designed keeping accessibility principles in mind to provide an inclusive experience for users with disabilities. The layout utilizes semantic HTML5 elements and ARIA attributes for screen readers. The color scheme also meets WCAG color contrast requirements.  
+The website has been designed keeping accessibility principles in mind to provide an inclusive experience for users with disabilities. The layout utilizes semantic HTML5 elements and ARIA attributes for screen readers. The color scheme also meets WCAG  [(Web Content Accessibility Guidelines)](https://www.w3.org/TR/WCAG21/#contrast-minimum) color contrast requirements.  
  
 All interactive elements like buttons, links and form fields have clearly defined focus states. The site is navigable can use a keyboard.  
  
 The content is written in a clear, concise manner using plain language to aid comprehension. All images have alt attributes and the site does not rely solely on visuals to convey information. 
 
+<details>
+<summary>Contrast cheker</summary>
+
+![](docs/screenshots/text_contrast.jpg)
+
+</details>
 
 ## Existing Features
 
-### Landing Page
+### Landing Page with Modal Window
+A simple modal window, which opens automatically only when the user first visits the page, explains the purpose of the site. It has an OK button to close the window, and also closes when the mouse is clicked outside the area of this window. If necessary, the user can open this window by clicking on the site logo in the upper left corner of the page.
+
+<details>
+<summary>Modal Window Screenshot</summary>
+
+![](docs/screenshots/modal_window.jpg)
+
+</details>
+
+
+### Navbar
+The navigation bar is responsive and collapses to a hamburger menu on smaller devices.
+
+If the user is logged in, their username will be displayed in the navigation bar and the dropdown menu will include:
+- Username
+- Logout
+
+When a staff member is logged in, the drop-down menu contains:
+- Approve comments
+- Logout
+
+<details>
+<summary>Navbar Screenshot on Large Devices</summary>
+
+![](docs/screenshots/Navbar_large.jpg)
+
+</details>
+
+<details>
+<summary>Navbar Screenshot on Mobile Devices</summary>
+
+![](docs/screenshots/Navbar_large.jpg)
+
+</details>
+
+
+### All Resources
+The All Resources page is a selected catalog of all resources with screenshots, a short description and a link to the relevant resource.
+The user can view a screenshot of each resource in an enlarged form by simply clicking on the image.
+Also, by clicking on the text with the description, the user can quickly view the comments to this resource, if they are there, or go to the page to view the comments in a larger window or write your own comment (provided the user is registered) by clicking the ADD YOUR OWN button COMMENT. If the user liked the resource, he can like it by clicking on the star icon (provided that the user is registered). There is also a comment icon next to the star, which indicates how many comments have already been made for this resource.
+
+<details>
+<summary>Quick view of the comments of the selected resource</summary>
+
+![](docs/screenshots/screnshot_comments_view.jpg)
+
+</details>
+<details>
+<summary>Window for writing comments and viewing comments</summary>
+
+![](docs/screenshots/Screenshot_comment_big1.jpg)
+![](docs/screenshots/Screenshot_comment_big2.jpg)
+
+</details>
+
