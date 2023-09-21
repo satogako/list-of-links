@@ -128,7 +128,7 @@ A simple modal window, which opens automatically only when the user first visits
 
 
 ### Navbar
-The navigation bar is responsive and collapses to a hamburger menu on smaller devices.
+The navigation bar is responsive and collapses to a hamburger menu on smaller devices. Navbar also uses active highlighting of the selected page, which provides the user with a clear understanding of which page he is on and facilitates site navigation.
 
 If the user is logged in, their username will be displayed in the navigation bar and the dropdown menu will include:
 - Username
@@ -148,13 +148,14 @@ When a staff member is logged in, the drop-down menu contains:
 <details>
 <summary>Navbar Screenshot on Mobile Devices</summary>
 
-![](docs/screenshots/Navbar_large.jpg)
+![](docs/screenshots/navbar_mobile.jpg)
 
 </details>
 
 
 ### All Resources
 The All Resources page is a selected catalog of all resources with screenshots, a short description and a link to the relevant resource.
+Users can click the link to view the resource on its official website.
 The user can view a screenshot of each resource in an enlarged form by simply clicking on the image.
 Also, by clicking on the text with the description, the user can quickly view the comments to this resource, if they are there, or go to the page to view the comments in a larger window or write your own comment (provided the user is registered) by clicking the ADD YOUR OWN button COMMENT. If the user liked the resource, he can like it by clicking on the star icon (provided that the user is registered). There is also a comment icon next to the star, which indicates how many comments have already been made for this resource.
 
@@ -172,3 +173,145 @@ Also, by clicking on the text with the description, the user can quickly view th
 
 </details>
 
+
+### Categories
+The Categories page allows users to filter resources by category. Users can click on category buttons at the top of the page to display resources with the selected tag. 
+ 
+The page dynamically displays resources with the chosen category. Each resource is shown in a card format with title, author, description and link. Users can click the link to view the resource on its official website. 
+ 
+The Categories page provides an easy way for developers to discover resources related to specific topics of interest. By filtering resources by category, users can efficiently find content relevant to their needs and skip over unrelated resources. The page aims to save developers time searching through all resources to find content on a particular subject. 
+ 
+Overall, the Categories page allows for customized browsing of resources based on categories. Developers can explore content in areas of interest and discover new resources through an intuitive filtering system. The page provides a tailored experience to meet individual needs.
+
+<details>
+<summary>Category page</summary>
+
+![](docs/screenshots/categories_loaded.jpg)
+
+</details>
+
+<details>
+<summary>Category page with the selected category</summary>
+
+![](docs/screenshots/categories_loaded_with_category.jpg)
+
+</details>
+
+
+### Register / Login
+The registration page allows users to create an account by entering a username, email address and password. This page is intended for new users to access the site and its content.
+ 
+The login page allows existing users to log into their account using a username or email address and password. This page is for returning users to access their account and site content.
+ 
+On the registration page, users enter:
+- Unique username
+- Email address
+- Password (enter twice for confirmation)
+ 
+Clicking the "Sign Up" button sends user information and creates an account. After that, they get access to write comments and give likes.
+ 
+On the login page, users enter:
+- User name
+- Their password
+ 
+By clicking the "Login" button, the user is authenticated and logged into their account. After that, they get access to write comments and give likes.
+
+These pages provide the necessary functionality for users to use the site.
+
+<details>
+<summary>Sign Up Page</summary>
+
+![](docs/screenshots/sign_up.jpg)
+
+</details>
+
+<details>
+<summary>Login Page</summary>
+
+![](docs/screenshots/login.jpg)
+
+</details>
+
+
+### Admirers
+Users can star the resources they like, other users will see the total number of fans of each resource and will be able to view the most popular resources on the site.
+
+<details>
+<summary>Most Popular Resources</summary>
+
+![](docs/screenshots/admirers.jpg)
+
+</details>
+
+
+### Footer
+The footer contains:
+- The year the site was created.
+- Link to [project GitHub repository](https://github.com/satogako/list-of-links).
+
+
+### Notifications
+The Materialized Toast element has been added to create an elegant notification when a user performs an action such as sending a message. Also, the user can see such messages as "no messages yet" and "register to be able to write comments". So that when the user sees an empty space, he can clearly understand what should appear there and what actions he needs to perform.
+
+<details>
+<summary>Sent for approval</summary>
+
+![](docs/screenshots/for_approval.jpg)
+
+</details>
+
+<details>
+<summary>No comments yet</summary>
+
+![](docs/screenshots/no_comments_yet.jpg)
+
+</details>
+
+<details>
+<summary>Register to be able add your comments</summary>
+
+![](docs/screenshots/register.jpg)
+
+</details>
+
+
+### Staff Only Features
+Features for staff only
+The "Approve Comments" drop-down menu in the navigation bar is only visible to logged in employees and includes an additional page.
+
+Unapproved comments
+All unapproved comments submitted by registered users. Employees can approve.
+
+Comments are welcome
+All approved comments submitted by registered users. Employees can delete.
+
+Staff will also be notified if there are no unapproved comments or no approved comments on the site, and the action buttons will not be available in this case.
+
+<details>
+<summary>Comments for approval</summary>
+
+![](docs/screenshots/com_for_approval.jpg)
+
+</details>
+
+<details>
+<summary>Approved comments (mark to remove)</summary>
+
+![](docs/screenshots/mark_approv_com1.jpg)
+![](docs/screenshots/mark_approv_com2.jpg)
+
+</details>
+
+<details>
+<summary>There are no comments for approval</summary>
+
+![](docs\screenshots\no_com_approve.jpg)
+
+</details>
+
+
+### Favicon
+![The favicon for the project](docs\screenshots\Screenshot_favicon.jpg)
+  - A favicon and icon for iOS/Android home screen bookmarks is included with the project's logo.
+
+***
