@@ -348,7 +348,7 @@ Staff will also be notified if there are no unapproved comments or no approved c
 - [favicon.io](https://favicon.io/favicon-generator/) to make a favicon for site.
 - [Alpine.js](https://alpinejs.dev/) lightweight JavaScript framework designed for building interactive web interfaces with minimal overhead.
 - [jQuery](https://jquery.com/) to simplify working with JavaScript on the client side of web pages.
-- [LogoMakr](https://logomakr.com/) to create logos and graphic designs online.s
+- [LogoMakr](https://logomakr.com/) to create logos and graphic designs online.
 
 
 ## External Python Packages Used
@@ -573,3 +573,34 @@ __Mobile__
 - The use of `Alpine.js` in HTML code is a source of errors when checked by the HTML validator. I added screenshots of these errors in the next section. In future projects, I will use more JavaScript or jQuery code to avoid this.
 - Due to the fact that the Codeanywhere IDE workspace sometimes hangs or takes a long time to open, a decision was made during the writing of the project to switch to the local VS Code IDE. This caused some time to configure the IDE itself and connect to the GitHub repository.
 - In the HTML templates in the `templates/` folder, the code is indented by four spaces, and in the copied templates of the `django-allauth` library in the `templates/account` folder, the HTML code is indented by two spaces. This is due to the fact that I did not fully configure the VS Code IDE due to lack of time. In the next project, I am going to fix this and set the same indentation standard of two spaces for all project files.
+
+
+### Code Validation
+
+#### HTML Validation
+
+Pages were validating using the [W3 HTML Validator](https://validator.w3.org/nu/), and pages with content that varies based on guest/logged in user/admin status were validated in each state.
+
+<details>
+<summary>W3 HTML Validation</summary>
+
+
+| Page                | URL                | Logged In Status | Result                |
+|---------------------|--------------------|------------------|-----------------------|
+| All Resources       | /                  | Guest            | [☑ No errors or warnings](docs/screenshots/html/checker_all_resources_guest.jpg) |
+| All Resources       | /                  | User             | [☑ No errors or warnings](docs/screenshots/html/checker_all_resources_user.jpg) |
+| All Resources       | /                  | Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_all_resources_admin.jpg) |
+| Categories          | /categories/       | Guest            | [❗ Errors. Atributes of Alpine.js](https://validator.w3.org/nu/?doc=https%3A%2F%2Flist-of-links-sdj-aa4cc1def405.herokuapp.com%2Fcategories%2F) |
+| Categorie           | /categories/       | User             | [❗ Errors. Atributes of Alpine.js](https://validator.w3.org/nu/?doc=https%3A%2F%2Flist-of-links-sdj-aa4cc1def405.herokuapp.com%2Fcategories%2F) |
+| Categories          | /categories/       | Admin            | [❗ Errors. Atributes of Alpine.js](https://validator.w3.org/nu/?doc=https%3A%2F%2Flist-of-links-sdj-aa4cc1def405.herokuapp.com%2Fcategories%2F) |
+| Register            | /accounts/signup/  | Guest            | [☑ No errors or warnings](docs/screenshots/html/checker_register_guest.jpg) |
+| Login               | /accounts/signup/  | Guest            | [☑ No errors or warnings](docs/screenshots/html/checker_login_guest.jpg) |
+| Logout              | /accounts/logout/  | User             | [☑ No errors or warnings](docs/screenshots/html/checker_logout_user.jpg) |
+| Logout              | /accounts/logout/  | Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_logout_admin.jpg) |
+| Approve comments    | /approval_comments/| Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_approval_comments.jpg) |
+| comment page        | /summernote/       | Guest            | [☑ No errors or warnings]() |
+| comment page        | /summernote/       | User             | [☑ No errors or warnings]() |
+| comment page        | /summernote/       | Admin            | [☑ No errors or warnings]() |
+
+
+</details>

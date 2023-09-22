@@ -19,35 +19,35 @@
                         <span>
                             <strong class="font-size-m">{{ post.author }}</strong> | {{ post.created_on }}
                         </span>
-                    <p>
                     </p>
-                    <span>
-                        <i class="tiny material-icons">comment</i>
-                        {% with comments.count as number_of_comments %}
-                        <strong class="font-size-m">{{ number_of_comments}}</strong>
-                        {% endwith %}
-                    </span>
-                    <span>
-                        {% if user.is_authenticated %}
-                        <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if admired %}
-                            <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
-                                aria-label="submit like">
-                                <i class="tiny star-button material-icons star-color">star</i>
-                            </button>
+                    <p class="inline-bl">
+                        <span>
+                            <i class="tiny material-icons">comment</i>
+                            {% with comments.count as number_of_comments %}
+                            <strong class="font-size-m">{{ number_of_comments}}</strong>
+                            {% endwith %}
+                        </span>
+                        <span>
+                            {% if user.is_authenticated %}
+                            <form class="inline-bl" action="{% url 'post_admirer' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if admired %}
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    aria-label="submit like">
+                                    <i class="tiny star-button material-icons star-color">star</i>
+                                </button>
+                                {% else %}
+                                <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    aria-label="submit like">
+                                    <i class="tiny star-button material-icons">star_border</i>
+                                </button>
+                                {% endif %}
+                            </form>
                             {% else %}
-                            <button class="star-button" type="submit" name="blogpost_id" value="{{post.slug}}"
-                                aria-label="submit like">
-                                <i class="tiny star-button material-icons">star_border</i>
-                            </button>
+                            <i class="tiny material-icons">star_border</i>
                             {% endif %}
-                        </form>
-                        {% else %}
-                        <i class="tiny material-icons">star_border</i>
-                        {% endif %}
-                        <strong class="font-size-m">{{ post.number_of_likes }}</strong>
-                    </span>
+                            <strong class="font-size-m">{{ post.number_of_likes }}</strong>
+                        </span>
                     </p>
                 </div>
                 <div class="divider"></div>
@@ -64,7 +64,7 @@
                             {% else %}
 
                             {% if user.is_authenticated %}
-                            <span>
+                            <div>
                                 <h3 class="flow-text">Leave a comment:</h3>
                                 <div class="row">
                                     <form method="post" class="col s12">
@@ -83,7 +83,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </span>
+                            </div>
                             {% else %}
                             <br><br>
                             <p class="text-placeholder">Register to be able to add your comments.</p>
@@ -91,23 +91,21 @@
                             {% endif %}
                         </div>
                         <!--List of comments-->
-                        <div class="col s12 l7 pull-l5">
-                            <span>
-                                <h3 class="flow-text">Comments:</h3>
-                                {% for comment in comments %}
-                                <br>
-                                <blockquote>
-                                    <p class="left-align font-size-s line-height">
-                                        <strong>{{ comment.name }}</strong> |
-                                        {{ comment.created_on }}
-                                    </p>
-                                    <p class="text-align-justify">{{ comment.comment_field }}</p>
-                                </blockquote>
-                                {% empty %}
-                                <br><br>
-                                <p class="text-placeholder">No comments yet</p>
-                                {% endfor %}
-                            </span>
+                        <div class="col s12 l7 pull-l5">  
+                            <h3 class="flow-text">Comments:</h3>
+                            {% for comment in comments %}
+                            <br>
+                            <blockquote>
+                                <p class="left-align font-size-s line-height">
+                                    <strong>{{ comment.name }}</strong> |
+                                    {{ comment.created_on }}
+                                </p>
+                                <p class="text-align-justify">{{ comment.comment_field }}</p>
+                            </blockquote>
+                            {% empty %}
+                            <br><br>
+                            <p class="text-placeholder">No comments yet</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
