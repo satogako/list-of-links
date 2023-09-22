@@ -414,7 +414,7 @@ __Mobile__
 <details>
 <summary>As a Site User I can view a list of posts so that I can select one to read</summary>
 
-### Acceptance Criteria
+#### Acceptance Criteria
 
 - When you open the home page, you can easily understand the purpose of the site.
  - The user can view the list of resource publications
@@ -425,10 +425,151 @@ __Mobile__
 <details>
 <summary>As a Site User I can view a paginated list of posts so that easily</summary>
 
-### Acceptance Criteria
+#### Acceptance Criteria
 
  - The page have no more than 9 resources
  - The results are sorted in reverse order. Newer publications at the beginning and older at the end
 
 **Result:** ☑ Pass
 </details>
+
+<details>
+<summary>As a Site User I can click on a post so that I can read the full text</summary>
+
+#### Acceptance Criteria
+
+- After selecting a resource, the user can click on the ADD YOUR COMMENT button and open the comments page
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viralt</summary>
+
+#### Acceptance Criteria
+
+- User can see the number of likes next to the star icon
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a As a Site User / Admin I can view comments on an individual post so that I can read the conversation</summary>
+
+#### Acceptance Criteria
+
+- By clicking on the text of the resource description, the user or admin can see the comments.
+- By clicking the ADD YOUR COMMENT button, the user or administrator can see comments in a larger window.
+- Add styles to the index.html and resource_details.html pages so that the user can freely navigate between comments.
+- Add an image and title to resource.html that matches the resource the user selected.
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site User I can register an account so that I can comment and like</summary>
+
+#### Acceptance Criteria
+
+- The user can register using a login and a password on the site 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site User I can leave comments on a post so that I can be involved in the conversation</summary>
+
+#### Acceptance Criteria
+
+- The comment form is displayed only when the user is registered
+- The user can write his comment and send it.
+- The comment is sent to the administrator for approval.
+- After sending a comment, the user receives a message that the comment must be approved 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site User I can like or unlike a post so that I can interact with the content</summary>
+
+#### Acceptance Criteria
+
+- A registered user can like it by clicking on the star on the resource_details.html page 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site Admin I can create, read, update and delete posts so that I can manage my blog content</summary>
+
+#### Acceptance Criteria
+
+- Creat database models
+- Build the admin page
+- Admin have the ability to post new comments on the admin page
+- Install a text editor on the admin page
+- Add the ability to filter posts
+- Add search box 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site Admin I can create draft posts so that I can finish writing the content later</summary>
+
+#### Acceptance Criteria
+
+- The Admin has the ability to write a draft
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</summary>
+
+#### Acceptance Criteria
+
+- The Admin must be able to reject or approve comments 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a User I can easily understand the purpode of the registration form so that I can easily use it</summary>
+
+#### Acceptance Criteria
+
+- Provide styles to the registration form, password input form, and exit form.
+- Connect form pages: login, logout and register to the navigation bar
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a User I can sort resources by category so that quickly select the resources I need</summary>
+
+#### Acceptance Criteria
+
+- The user can easily understand the purpose of the categories page
+- On the categories page, the user can sort resources using buttons 
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Admin I can approving and deleting comments on the "Approve comments" page so that make the approval or removal process faster.</summary>
+
+#### Acceptance Criteria
+
+- Only an administrator can open the Approve "Comments page".
+- The administrator can approve or delete comments on the "Approve comments page".
+- Add styles to the "Approve comments page". 
+
+**Result:** ☑ Pass
+</details>
+
+
+### Challenges Faced
+- The use of `Alpine.js` in HTML code is a source of errors when checked by the HTML validator. I added screenshots of these errors in the next section. In future projects, I will use more JavaScript or jQuery code to avoid this.
+- Due to the fact that the Codeanywhere IDE workspace sometimes hangs or takes a long time to open, a decision was made during the writing of the project to switch to the local VS Code IDE. This caused some time to configure the IDE itself and connect to the GitHub repository.
+- In the HTML templates in the `templates/` folder, the code is indented by four spaces, and in the copied templates of the `django-allauth` library in the `templates/account` folder, the HTML code is indented by two spaces. This is due to the fact that I did not fully configure the VS Code IDE due to lack of time. In the next project, I am going to fix this and set the same indentation standard of two spaces for all project files.
