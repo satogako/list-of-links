@@ -315,3 +315,120 @@ Staff will also be notified if there are no unapproved comments or no approved c
   - A favicon and icon for iOS/Android home screen bookmarks is included with the project's logo.
 
 ***
+
+### Features remaining to be implemented
+- I could not reproduce the screenshots of the resources in the cards as it is implemented on the All Resources page. I attribute this to the fact that the serializer.py file does not pass the full image address from Cloudinary to json. Also could not reproduce the card creation date. In my opinion, date data is transferred in json in a different format than with Django. What I haven't figured out yet. After fixing these problems, I plan to add these features. (I would greatly appreciate it if you could provide your expert opinion on how to fix these issues and provide feedback on whether I'm heading in the right direction. Is it better to implement these features without using the Alpine.js framework, but only with JavaScript?)
+  <details>
+  <summary>Screenshot json</summary>
+
+  ![](docs/screenshots/json.jpg)
+
+  </details>
+
+- Add a quick view of the comments of each resource. Since this is implemented on the All Resources page when clicking on the description text.
+- Add the ability to comment and review comments on a separate page.
+- Add registration on the site using a Google account and using GitHub.
+- Add the ability for users to add their own resources
+- Add an opportunity for the admin to approve added resources by users.
+- Write code to the  script.js for the comment form so that when you click on this form, the cursor always moves to the beginning of the line.
+- Add a notification to the user if he enters an incorrect password or login
+
+
+## Technologies Used
+- [Python](https://www.python.org/)
+- [pip](https://pip.pypa.io/en/stable/) for installing Python packages.
+- [Git](https://git-scm.com/) for version control.
+- [GitHub](https://github.com/) for storing the repository online during development.
+- GitHub Projects was invaluable throughout the project and helped me keep track of things to do and bugs to fix - you can see [the project's board here](https://github.com/users/davidindub/projects/7).
+- [VS Code](https://code.visualstudio.com/) local IDE.
+- [Balsamiq](https://balsamiq.com/wireframes/) for wireframing.
+- [Materialize](https://materializecss.com/) as a front end framework.
+- [Google Chrome](https://www.google.com/intl/en_ie/chrome/), [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Opera](https://www.opera.com/) for testing on Windows.
+- [Google Chrome](https://www.google.com/intl/en_ie/chrome/) on Android 12.
+- [favicon.io](https://favicon.io/favicon-generator/) to make a favicon for site.
+- [Alpine.js](https://alpinejs.dev/) lightweight JavaScript framework designed for building interactive web interfaces with minimal overhead.
+- [jQuery](https://jquery.com/) to simplify working with JavaScript on the client side of web pages.
+- [LogoMakr](https://logomakr.com/) to create logos and graphic designs online.s
+
+
+## External Python Packages Used
+- [django-taggit](https://github.com/jazzband/django-taggit) to provide generic tagging functionality for the models
+- [django-rest-framework](https://www.django-rest-framework.org/) to build an API for the project that can be used by third party clients.
+
+
+### Browser Compatibility
+I tested the website on two different operating systems on three different types of hardware and didn't find any rendering bugs between the browsers tested.
+
+| Operating System | Chrome  | Firefox | Opera|
+|------------------|---------|---------|------| 
+| Windows 10       | Ok      | Ok      | Ok   | 
+| Android 12       | Ok      | Ok      | Ok   | 
+
+
+## Testing 
+During the project development, I consistently performed manual testing. I maintained a record of error reproduction steps, expected behavior, screenshots of issues, and their resolutions to assist myself in the future.
+
+
+### Responsiveness 
+I tested for responsiveness on many different sized viewports from 320px wide up to Ultrawide resolutions, and using different hardware (Monitors, Laptops, Phones).
+
+
+### Performance Testing
+Performed using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) in Google Chrome.
+
+<details>
+<summary>
+Detailed Lighthouse Testing
+</summary>
+
+__Desktop__
+
+| Page               | Performance | Accessibility | Best Practices | SEO |
+|--------------------|-------------|---------------|----------------|-----|
+| All Resources      | 96          | 96            | 100            |100  |
+| comment page       | 99          | 96            | 100            |100  |
+| Categories         | 93          | 97            | 100            |100  |
+| Register           | 100         | 97            | 100            |100  |
+| Login              | 97          | 97            | 100            |100  |
+| Approve comments   | 96          | 98            | 100            |100  |
+| Logout             |100          | 97            | 100            |100  |
+
+__Mobile__
+
+| Page               | Performance | Accessibility | Best Practices | SEO |
+|--------------------|-------------|---------------|----------------|-----|
+| All Resources      | 93          | 96            | 100            |100  |
+| comment page       | 88          | 96            | 100            |100  |
+| Categories         | 93          | 97            | 100            |100  |
+| Register           | 95          | 97            | 100            |100  |
+| Login              | 95          | 97            | 100            |100  |
+| Approve comments   | 93          | 98            | 100            |100  |
+| Logout             | 91          | 97            | 100            |100  |
+
+
+</details>
+
+
+### User Story Testing
+
+<details>
+<summary>As a Site User I can view a list of posts so that I can select one to read</summary>
+
+### Acceptance Criteria
+
+- When you open the home page, you can easily understand the purpose of the site.
+ - The user can view the list of resource publications
+
+**Result:** ☑ Pass
+</details>
+
+<details>
+<summary>As a Site User I can view a paginated list of posts so that easily</summary>
+
+### Acceptance Criteria
+
+ - The page have no more than 9 resources
+ - The results are sorted in reverse order. Newer publications at the beginning and older at the end
+
+**Result:** ☑ Pass
+</details>
