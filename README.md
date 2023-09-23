@@ -598,9 +598,137 @@ Pages were validating using the [W3 HTML Validator](https://validator.w3.org/nu/
 | Logout              | /accounts/logout/  | User             | [☑ No errors or warnings](docs/screenshots/html/checker_logout_user.jpg) |
 | Logout              | /accounts/logout/  | Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_logout_admin.jpg) |
 | Approve comments    | /approval_comments/| Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_approval_comments.jpg) |
-| comment page        | /summernote/       | Guest            | [☑ No errors or warnings]() |
-| comment page        | /summernote/       | User             | [☑ No errors or warnings]() |
-| comment page        | /summernote/       | Admin            | [☑ No errors or warnings]() |
+| comment page        | /summernote/       | Guest            | [☑ No errors or warnings](docs/screenshots/html/checker_summernote_guest.jpg) |
+| comment page        | /summernote/       | User             | [☑ No errors or warnings](docs/screenshots/html/checker_summernote_user.jpg) |
+| comment page        | /summernote/       | Admin            | [☑ No errors or warnings](docs/screenshots/html/checker_summernote_admin.jpg) |
 
 
 </details>
+
+
+#### CSS Validation
+
+The custom CSS was validated using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) as CSS level 3 + SVG. 
+
+![https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/images/vcss)
+
+<details>
+
+<summary>W3C CSS Validation</summary>
+
+![](docs/screenshots/css/ckecked_style.css.jpg)
+
+☑ Pass
+
+</details>
+
+
+#### Python Validation
+
+All the custom Python files pass PEP8CI Validation, which I checked both in the development environment and on [pep8ci](https://pep8ci.herokuapp.com/).
+
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/admin.py</summary>
+
+![](docs/screenshots/python/checked_admin.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/apps.py</summary>
+
+![](docs/screenshots/python/cheked-apps.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/forms.py</summary>
+
+![](docs/screenshots/python/checked_forms.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/models.py</summary>
+
+![](docs\screenshots\python\checked_models.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/serializers.py</summary>
+
+![](docs/screenshots/python/cheked_serializers.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/urls.py</summary>
+
+![](docs/screenshots/python/ckecked_urls.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - blog_link/views.py</summary>
+
+![](docs/screenshots/python/ckecked_views.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - list_0f_links/settings.py</summary>
+
+![](docs/screenshots/python/checked_settings.py.jpg)
+
+☑ Pass
+
+</details>
+
+<details>
+
+<summary>PEP8 Online Validation - list_0f_links/urls.py</summary>
+
+![](docs/screenshots/python/ckecked_list_of_links_urls.py.jpg)
+
+☑ Pass
+
+</details>
+
+
+#### JavaScript
+
+Very little custom JavaScript was used with most of the functionality coming from Materialize. One JS files I wrote was validated using [JSHint](https://jshint.com/).
+
+<details>
+<summary>JSHint validation screenshot</summary>
+
+![](docs/screenshots/javascript/ckecked_script.js.jpg)
+
+</details>
+
+
+***
