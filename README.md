@@ -732,3 +732,108 @@ Very little custom JavaScript was used with most of the functionality coming fro
 
 
 ***
+
+
+## Deployment
+
+### Local Deployment
+
+
+In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
+
+- `git clone https://github.com/satogako/list-of-links.git`
+
+
+After cloning or opening the repository in Gitpod, you will need to:
+
+1. Create your own `env.py` files in the root level of the project:
+
+```
+os.environ["DATABASE_URL"] = "postgres://"
+os.environ["SECRET_KEY"] = "YOUR_DJANGO_SECRET_KEY"
+os.environ["CLOUDINARY_URL"] = "cloudinary://YOUR_CLOUDINARY_URL"
+os.environ["LOCAL_HOST"] = "YOUR LOCAL HOST"
+os.environ["DEVELOPMENT"] = "True"
+```
+**Ensure the `env.py` file is added to your `.gitignore` file so it doesn't get pushed to a public repository.
+
+If you don't have a Cloudinary account already, you will need to [Sign Up for Free](https://cloudinary.com/users/register/free) to host the static files in the project.
+
+2. Run `pip3 install -r requirements.txt` to install required Python packages.
+
+3. Migrate the database models using:
+`python3 manage.py migrate`
+
+4. Create a superuser with your own credentials:
+`python3 manage.py createsuperuser`
+
+5. Run the Django sever:
+`python manage.py runserver`
+The address of the server will appear in the terminal window.
+Add /admin to the address to access the Django admin panel using your superuser credentials.
+
+
+### Heroku Deployment
+<details>
+
+<summary>
+Full Instructions on deploying to Heroku
+</summary>
+
+1. Create a new app in Heroku.
+
+2. Click the Settings tab in the Heroku Dashboard.
+Click Reveal Config Vars, and add the same variables from your `env.py` file here, except for `DEBUG`, as you don't want debug mode on the deployed project.
+
+3. Copy the value of `DATABASE_URL` from the Config Vars. In your `settings.py` file, comment out the default database configuration, and add a new one with the Postgres url.
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+
+4. Migrate the database models using:
+`python3 manage.py migrate`
+
+5. Create a superuser with your own credentials:
+`python3 manage.py createsuperuser`
+
+6. Create a file called `Procfile` (no extension) containing the following:
+```
+web: gunicorn list_of_links.wsgi
+```
+
+7. Run `pip3 install -r requirements.txt` to install required Python packages.
+
+8. Add the url of your Heroku app to your `settings.py` file 
+`ALLOWED_HOSTS = ['YOUR URL APP.herokuapp.com',
+                 os.environ.get('LOCAL_HOST')]`
+
+9. Run `python3 manage.py collectstatic` is used by Django to collect all the static files in your project and copy them to the single folder you specified in the STATIC_ROOT setting in the settings.py file.
+
+10. Stage and commit your files to GitHub
+```
+git add . 
+git commit -m "Commit message"
+git push
+```
+
+11. In the Heroku dashboard for your App, select Deploy.
+Under Deployment Method, choose GitHub and search for your repository and click Connect.
+
+12. Select Deploy Branch. Heroku will build the App from the branch you selected.
+
+</details>
+
+
+*** 
+
+
+## Credits
+
+### Media
+
+- [Materialize Icons](https://materializecss.com/icons.html) were used extensively in the project.
+- [LogoMakr](https://logomakr.com/) tools and icons were used to create the logo.
+ - I used the [Alpine.js](https://www.youtube.com/watch?v=r5iWCtfltso&ab_channel=TraversyMedia) tutorials on Youtube to better understand how the framework works and apply it to my code.
