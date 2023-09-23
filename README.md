@@ -20,8 +20,8 @@ Users can browse the collection of resources by category or search for specific 
 I used [GitHub issues](https://github.com/satogako/list-of-links/issues) for the product backlog containing the user stories.
 
 CRUD functionality:
-- All Categories - displays a list of resources and their approved comments
-- Categories - shows resource details and its verified comments
+- All Resources - displays a list of resources and their approved comments
+- Categories - allows the user to filter resources by a certain category
 - Approve comments - displays comments that need approval and allows the administrator to approve or delete them.
 - resource_details.htm - shows details of the resource and its confirmed comments and also allows the registered user to send comments.
 - class ResourseAdmirers - handles liking and disliking resources.
@@ -279,10 +279,10 @@ The Materialized Toast element has been added to create an elegant notification 
 Features for staff only
 The "Approve Comments" drop-down menu in the navigation bar is only visible to logged in employees and includes an additional page.
 
-Unapproved comments
+
 All unapproved comments submitted by registered users. Employees can approve.
 
-Comments are welcome
+
 All approved comments submitted by registered users. Employees can delete.
 
 Staff will also be notified if there are no unapproved comments or no approved comments on the site, and the action buttons will not be available in this case.
@@ -305,13 +305,13 @@ Staff will also be notified if there are no unapproved comments or no approved c
 <details>
 <summary>There are no comments for approval</summary>
 
-![](docs\screenshots\no_com_approve.jpg)
+![](docs/screenshots/no_com_approve.jpg)
 
 </details>
 
 
 ### Favicon
-![The favicon for the project](docs\screenshots\Screenshot_favicon.jpg)
+![The favicon for the project](docs/screenshots/Screenshot_favicon.jpg)
   - A favicon and icon for iOS/Android home screen bookmarks is included with the project's logo.
 
 ***
@@ -662,7 +662,7 @@ All the custom Python files pass PEP8CI Validation, which I checked both in the 
 
 <summary>PEP8 Online Validation - blog_link/models.py</summary>
 
-![](docs\screenshots\python\checked_models.py.jpg)
+![](docs/screenshots/python/checked_models.py.jpg)
 
 ☑ Pass
 
@@ -721,7 +721,7 @@ All the custom Python files pass PEP8CI Validation, which I checked both in the 
 
 #### JavaScript
 
-Very little custom JavaScript was used with most of the functionality coming from Materialize. One JS files I wrote was validated using [JSHint](https://jshint.com/).
+Very little custom JavaScript was used with most of the functionality coming from Materialize and Alpine.js. One JS files I wrote was validated using [JSHint](https://jshint.com/).
 
 <details>
 <summary>JSHint validation screenshot</summary>
@@ -832,8 +832,13 @@ Under Deployment Method, choose GitHub and search for your repository and click 
 
 ## Credits
 
+
 ### Media
 
 - [Materialize Icons](https://materializecss.com/icons.html) were used extensively in the project.
 - [LogoMakr](https://logomakr.com/) tools and icons were used to create the logo.
  - I used the [Alpine.js](https://www.youtube.com/watch?v=r5iWCtfltso&ab_channel=TraversyMedia) tutorials on Youtube to better understand how the framework works and apply it to my code.
+
+
+ ### Acknowledgements
+ I would like to thank the entire Code Institute team for their kindness, understanding and willingness to always help.
