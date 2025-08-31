@@ -169,9 +169,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # звідки брати кастомну статику
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] тимчасово, щоб перевірка без компресії
 STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage" тимчасово, щоб перевірка без компресії
-STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
 
+STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
+STATICFILES_MANIFEST_NAME = "manifest-v2.json"
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
