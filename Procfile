@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput --clear && gunicorn list_of_links.wsgi:application
+web: gunicorn list_of_links.wsgi:application
